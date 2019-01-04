@@ -370,10 +370,10 @@ main .main-container .form table td {
 	border-right: 1px solid #C8CBCF;
 	color: #58595B
 }
-main .main-container .form table tbody tr:nth-child(odd) {
+main .main-container .form table tbody tr:nth-child(even) {
 	background-color: #EEE
 }
-main .main-container .form table tbody tr:nth-child(even) {
+main .main-container .form table tbody tr:nth-child(odd) {
 	background-color: #FFF
 }
 main .main-container .form table tfoot tr td{
@@ -475,6 +475,7 @@ main .main-container .form-spannerdata-organizer-viewall{
 	max-width: 535px;
 }
 /* End form-flightrecords-organizer-viewall */
+
 /* Start form-flightrecords-organizer-detail */
 /* Start form-flightsummary-organizer-detail */
 /* Start form-inactivedays-organizer-detail */
@@ -487,10 +488,14 @@ main .main-container .form-spannerdata-organizer-detail .input-text:nth-child(ev
 main .main-container .form-organizerdata-organizer-detail .input-text:nth-child(even){
 	background-color: #E6E6FA
 }
-/* End form-flightrecords-organizer-detail */
+/* End form-organizerdata-organizer-detail */
 /* End form-spannerdata-organizer-detail */
 /* End form-inactivedays-organizer-detail */
 /* End form-flightsummary-organizer-detail */
+/* End form-flightrecords-organizer-detail */
+
+
+/* Start form-organizerdata-organizer-detail */
 main .main-container .form-organizerdata-organizer-detail select{
 	height: 40px
 }
