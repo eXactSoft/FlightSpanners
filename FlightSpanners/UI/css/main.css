@@ -389,11 +389,7 @@ main .main-container .form table th{
 /******** Responsive layout - Browser 550px or less ********/ 
 @media only screen and (max-width: 550px){
 	/* At width < 550px the label will be on the top of the textbox & select */
-	main .main-container .form
-	:not(.form-flightrecords-organizer-viewall)
-	:not(.form-flightsummary-organizer-viewall)
-	:not(.form-inactivedays-organizer-viewall)
-	:not(.form-spannerdata-organizer-viewall){
+	main .main-container .form{
 		width: 300px;
 		/*margin: 0 auto !important;*/
 	}
@@ -402,6 +398,10 @@ main .main-container .form table th{
 	main .main-container 	.form-flightsummary-organizer-viewall{
 		width: 95%;
 	}*/
+	/*:not(.form-flightrecords-organizer-viewall)
+	:not(.form-flightsummary-organizer-viewall)
+	:not(.form-inactivedays-organizer-viewall)
+	:not(.form-spannerdata-organizer-viewall)*/
 	main .main-container .form .submit{
 		width: 100%;
 		max-width: 300px;
@@ -430,8 +430,8 @@ main .main-container .form table th{
 	}
 	main .main-container .form label[class="label-fromto"]{
 		display: inline-block;
-		margin-bottom: 10px;
-		width: 3%;
+		margin-bottom: 15px;
+		width: 5%;
 		vertical-align: middle
 	}	
 }
