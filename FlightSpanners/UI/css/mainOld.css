@@ -1,0 +1,182 @@
+/* Start General Layout elements */
+ .col2 {
+	float:left;
+}
+.col2 {
+	min-width:250px;
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.wrapper {
+	width:100%;
+	overflow:hidden;
+}
+/* End General Layout elements */
+
+/* Start body styles */
+body {
+	background:url(../images/bg.jpg) top center repeat;
+	border:0;
+	font:13px Arial, Helvetica, sans-serif;
+	color:#000000;
+	line-height:17px;
+	width:100%;
+}
+/* End body styles */
+
+
+/* Start main-container */
+.main-container {
+	margin:10px 10px 20px 10px;
+	/*width: calc(100%-10px); */
+	/*width:100%;
+	min-width:250px;*/
+}
+/* End main-container */
+
+/* Start header 
+.header {
+	overflow:hidden;
+	width:100%;
+}
+.header-height {
+	height:0px;
+}
+ End header */
+
+/* Start content */
+.content {
+	padding-top:0px;
+	width:100%;
+	overflow:hidden;
+	padding-bottom:0px;
+}
+.content .pad-left {
+	padding-left:0px;
+}
+.content h3 {
+	font-size:20px;
+	color:#fff;
+	padding-left:25px;
+	line-height:57px;
+	margin-bottom:30px;
+	background:#3081c8;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	font-weight:600;
+}
+.content h3 a {
+	color:#fff;
+	text-decoration: none;
+	font-size:20px;
+  outline: 0;
+}
+.content h3 a:hover {
+	color: rgb(246, 255, 126);
+}
+.content .pad-bot-1st {
+	padding-bottom:7px;
+}
+.content .pad-bot-2nd {
+	padding-bottom:4px;
+}
+.content .title {
+	font-size:25px;
+	color:rgb(0, 0, 0);
+}
+
+.content .map {
+	margin-left:2px;
+}
+
+.content .map:hover {
+	color:rgb(245, 11, 11);
+}
+
+.content .link {
+	color: #039;
+	text-decoration: none;
+	font-size:20px;
+  outline: 0;
+}
+
+.content .link:visited {
+	color: #800080;
+}
+
+.content .link:hover {
+	text-decoration: underline;
+}
+
+.content .marg-bot {
+	margin-bottom:13px;
+}
+.content .marg-right {
+	margin-right:7px;
+}
+.content .marg-left {
+	margin-left:45px;
+}
+
+.content .marker-1st, .content .marker-2nd {
+	display:inline-block;
+	background:url(../images/marker-1st.gif) 0 0 no-repeat;
+	width:17px;
+	height:17px;
+}
+.content .marker-2nd, .content .marker-1st:hover {
+	background:url(../images/marker-2nd.gif) 0 0 no-repeat;
+}
+.content .marker-2nd:hover {
+	background:url(../images/marker-1st.gif) 0 0 no-repeat;
+}
+.content .under {
+	padding-bottom:20px;
+	border-bottom:1px solid #cccccc;
+	margin-bottom:20px;
+}
+.content .line1 {
+	background:url(../images/line-ver.gif) 320px 0 repeat-y;
+}
+/* End content */
+
+/* Start footer */
+.footer-container {
+	background:url(../images/bg-footer.jpg) top center repeat;
+	height:50px;
+	width:100%;
+}
+.footer {
+	width:100%;
+	margin:0 auto;
+	padding-top:0px;
+	text-align:center;
+	line-height:18px;
+	color:#fff;
+}
+.footer a {
+	color:#fff;
+	text-decoration:none;
+}
+.footer .lf {
+	float:left;
+	margin:0;
+	padding:15px;
+}
+.footer .rf {
+	float:right;
+	margin:0;
+	padding:15px;
+}
+/* End footer */
+
+/* Start My Framework */
+.clearfix{ /* To fix the problems of the float property */
+	clear:both
+}
+/* End My Framework */

@@ -1,5 +1,11 @@
-Flight Spanners Project Overview
+**Flight Spanners Project Overview & Introduction**
 
+**Overview**
+The Flight Spanners is a web application to allow the organizer to equally distribute 
+a number of flights to a group of authorized spanners according to a number of factors.
+Also it allows to those spanners to monitor their record of flights.
+
+**Introduction**
 The spanner is the authorized technical person to accompany the aircraft flights so he could
 release the aircraft to service and rectify any defects at the flight destination.
 There are a number of flights required to be equally distributed between these spanners by 

@@ -1,0 +1,84 @@
+/* CSS file that provides better cross-browser consistency*/
+
+/* Start Default Reset  */
+*{
+	margin:0;
+	padding:0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;	
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, w
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* Ignore ios input style
+input,textarea{
+    -webkit-appearance: none;
+    -webkit-border-radius:0; 
+    border-radius:0;
+}
+
+*:focus {
+    outline: none;
+}
+*/
+/* Start Default Reset  */
+
+/* Start Global Rules*/
+ul, ol{
+	list-style: none
+}
+
+*{
+	box-sizing:border-box
+}
+
+img{
+	max-width:100% !important;
+}
+
+a{
+	text-decoration:none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+b, strong, .strong{
+	font-weight:bold;
+}
+
+em{
+	font-style:italic;
+}
+/* End Global Rules*/
+
+
+
