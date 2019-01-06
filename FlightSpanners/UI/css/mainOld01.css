@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Encode+Sans+Condensed|Carrois+Gothic|Nunito+Sans|Quattrocento+Sans');
 
+/* Start General Layout elements */
+/* End General Layout elements */
+
 /* Start body styles */
 body {
 	background-color: #F5F5F5; /* #EEE */
@@ -20,7 +23,7 @@ body {
 header{
 	width:100%;
 	border-bottom: 1px solid #f05323;
-	padding-right: 10px /*This give a space to the right icon */
+	padding-right: 10px
 }
 header .icon-left{
 	float: left;
@@ -65,6 +68,10 @@ header .icon-right p i{
 header .icon-right p span{
 	font-size: 16px
 }
+/*header .icon-right p a:hover{
+	color: #f05323;
+	cursor: pointer;
+}*/
 /* End header */
 
 /* Start Nav */
@@ -73,7 +80,7 @@ nav .toggle-container{
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
-	margin: 20px 0 0 10px;
+	margin: 20px 0 10px 10px;
 	float: left
 }
 nav .toggle-container label{
@@ -115,7 +122,7 @@ The elements represented by the two sequences share the same parent in the docum
 }
 nav .menu-container{
 	/*border-bottom: 1px solid rgb(30, 30, 49);*/
-	margin: 20px 10px 0 0;
+	margin: 20px 10px 10px 0;
 	background-color: #f05323;
 	float: left;
 }
@@ -177,9 +184,9 @@ nav > .menu-container > .ul-main > li:hover > span::before{
 	left: 0px;
 	/*transition: 0.7s ease-in all;*/
 }
-/******** Start nav responsive layout - Browser 926px or less ********/ 
-@media only screen and (max-width: 1170px){
-	/* At width < 1170px the nav menu will be vertical instead of horizontal */	
+/******** Responsive layout - Browser 926px or less ********/ 
+@media only screen and (max-width: 926px){
+	/* At width < 926px the nav menu will be vertical instead of horizontal */	
 	nav .toggle-container{
 		float: none;
 		margin-bottom: 0
@@ -191,12 +198,12 @@ nav > .menu-container > .ul-main > li:hover > span::before{
 		opacity: 1; /* Not transperant at mobile mode */
 	}
 	nav .menu-container{
-		margin: 0 10px 0 10px;
+		margin: 0 10px 10px 10px;
 		max-width: 320px;
 	}
 	nav .menu-container .ul-main li{
 		display: block; /* Display each li at separate line */
-  margin: 0;
+  	margin: 0 ;
 		border-bottom: 1px solid #cc470d;
 		text-align: left;
 		position: static;	
@@ -227,7 +234,6 @@ nav > .menu-container > .ul-main > li:hover > span::before{
 		text-align: center
 	}
 }
-/******** End nav responsive layout - Browser 1170px or less ********/
 /* End Nav */
 
 /* Start main */
@@ -235,20 +241,12 @@ main .main-container{
 	margin: 20px 10px 0px 10px;
 	/*width: calc(100%-10px); */
 }
-/* Start form styles */
+/* Start form general settings */
 main .main-container .form{
 	margin: 10px 0 0 10px;
 	font-family: 'Carrois Gothic', sans-serif;	
-	width: 600px;
+	width: 500px;
 }
-/* Start form exceptions */
-/* Select all forms that end with "-viewall" */
-main .main-container .form[class$="-viewall"] {
-	width: 100%
-}
-/* End form exceptions */
-/* End form styles */
-/* Start form controls styles */
 main .main-container .form .input-text,
 main .main-container .form select{
 	background: #FFF;
@@ -258,9 +256,11 @@ main .main-container .form select{
 	color:#58595B; /*#929497;*/
 	letter-spacing: 0;
 	padding: 0 10px;
+	width: 100%;
 	height: 32px;
-	margin-top: 15px;	
-	width: 300px;
+	margin-top: 10px;	
+	margin-bottom: 15px;
+	max-width: 300px;
 	display: inline-block;
 	vertical-align: middle
 }
@@ -268,29 +268,9 @@ main .main-container .form .input-text:focus,
 main .main-container .form select:focus-within{
 	border-color: #929497
 }
-/* Start input textbox exceptons */
-main .main-container .form .text-fromto{
-	display: inline-block;
-	vertical-align: middle;
-	margin-top: 15px;
-	width: 175px;
-}
-main .main-container .form-forgot-unregistered .input-text:focus{
-	border-color: #C8CBCF /* Don't change the border as the text box is read only */
-}
-/* Select all even input-text for forms that one of its classes ends with "-detail" */
-main .main-container .form[class$="-detail"] .input-text:nth-child(even){
-	background-color: #E6E6FA
-}
-/* End input textbox exceptons */
-/* Start select exceptons */
-main .main-container .form-organizerdata-organizer-detail select{
-	height: 55px
-}
-/* End select exceptons */
 .input-checkbox{
 	vertical-align: middle;
-	margin-top: 13px;
+	margin-bottom: 7px;
 }
 main .main-container .form .submit{
 	background: #F05323;
@@ -305,6 +285,7 @@ main .main-container .form .submit{
 	width: 170px;
 	height: 41px;
 	margin-top: 20px;
+	margin-bottom: 10px;
 	display: block
 }
 main .main-container .form .submit:hover{
@@ -318,58 +299,34 @@ main .main-container .form a{
 	line-height: 17px;
 	display: inline-block;
 	vertical-align: middle;
-	margin-top: 15px
+	margin-bottom: 5px
 }
 main .main-container .form a:hover{
 	text-decoration: underline
 }
-main .main-container .form fieldset { 
-	border: 1px solid silver;
-	padding: 15px;
-	padding-bottom: 30px;
-	border-radius: 4px;
-	font-family: inherit;
-	font-size: 14px;
-	color: #58595B;
-	width: 70%;
-	margin-top: 15px
-}
-/* Start fieldset Exceptons */
-main .main-container .form-flightrecords-organizer-search fieldset{
-	width: 85%
-}
-/* End fieldset Exceptons */
 main .main-container .form label{
 	display: inline-block;
 	vertical-align: middle;
-	margin-top: 15px;
-	width: 115px;
+	margin-bottom: 5px;
+	width: 110px;
 	font-size: 14px;
 	line-height: 24px;
 	color: #58595B;
 	letter-spacing: 0;
 }
-/* Start label Exceptons */
-main .main-container .form fieldset label{
-	width: 80px;
+main .main-container .form .text-fromto{
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 15px;
+	width: 175px;
 }
 main .main-container .form label[class="label-fromto"]{
 	display: inline-block;
 	vertical-align: middle;
-	margin-top: 5px;
+	margin-bottom: 5px;
 	width: 15px;
 }
-main .main-container .form-forgot-unregistered label:first-of-type{
-	color: #FF0000;
-	font-size: 17px;
-}
-main .main-container .form-signin label,
-main .main-container .form-forgot-unregistered label{
-	width: 145px
-}
-/* End label Exceptons */
-/* End form controls styles */
-/* Start form table pagination links styles*/
+/* Pagination links */
 main .main-container .form .pagination{
 	margin: 10px 0;
 	display: inline-block
@@ -393,17 +350,16 @@ main .main-container .form .pagination a.active {
 main .main-container .form .pagination a:hover:not(.active) {
 	background-color: #ddd;
 }
-/* End form table pagination links styles*/
-/* Start form table Styles */
 main .main-container .form .table-container{
 	overflow-x: auto; /* If you have a table that is too wide, you can add a container 
 											 element with overflow-x:auto around the table, and it will display 
 											 a horizontal scroll bar when needed. */
-	margin: 20px 0 0 0							 
+	margin: 10px auto							 
 } 
 main .main-container .form table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	width: 100%;
 }
 main .main-container .form table tbody,
 main .main-container .form table thead{
@@ -413,7 +369,7 @@ main .main-container .form table th,
 main .main-container .form table td {
 	text-align: left;
 	vertical-align: middle;
-	padding: 10px;
+	padding: 16px;
 	border-right: 1px solid #C8CBCF;
 	color: #58595B
 }
@@ -424,7 +380,8 @@ main .main-container .form table tbody tr:nth-child(odd) {
 	background-color: #FFF
 }
 main .main-container .form table tfoot tr td{
-	padding: 10px 10px 10px 15px;
+	padding: 10px;
+	padding-left: 15px;
 	text-align: left;
 	border-right: none
 }
@@ -432,65 +389,155 @@ main .main-container .form table th{
 	background-color: #00BFFF;
 	color: #fff
 }
-/* End form table Styles */
-/******** Start form responsive layout - Browser 650px or less ********/ 
-@media only screen and (max-width: 650px){
+main .main-container .form fieldset { 
+	border: 1px solid silver;
+	padding: 15px;
+	padding-bottom: 25px;
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: 14px;
+	color: #58595B;
+	width: 83%;
+}
+main .main-container .form-flightrecords-organizer-search fieldset{
+	width:100%
+}
+main .main-container .form fieldset label{
+	width: 75px;
+}
+main .main-container .form-flightrecords-organizer-search fieldset label[class="label-fromto"]{
+	width: 15px;
+}
+/******** Responsive layout - Browser 550px or less ********/ 
+@media only screen and (max-width: 550px){
 	/* At width < 550px the label will be on the top of the textbox & select */
 	main .main-container .form{
-		width: 350px;
+		width: 300px;
 		/*margin: 0 auto !important;*/
 	}
-	/* Start form exceptions at mobile mode */
-	/* Select all forms that end with "-viewall" */
-	main .main-container .form[class$="-viewall"] {
-		width: 100%
-	}
-	/* End form exceptions at mobile mode */
-	main .main-container .form .submit{
+	/*:not(.form-flightrecords-organizer-viewall)
+	:not(.form-flightsummary-organizer-viewall)
+	:not(.form-inactivedays-organizer-viewall)
+	:not(.form-spannerdata-organizer-viewall)*/
+		main .main-container .form .submit{
 		width: 100%;
 		max-width: 300px;
-	}
-	main .main-container .form fieldset { 
-		width: 100%;
 	}
 	main .main-container .form .input-text,
 	main .main-container .form select{
 		margin-top: 0; /* As its label will be on the top of it instead of left of it*/
 	}
-	/* Start input textbox exceptions at mobile mode */
-	main .main-container .form-signin .input-text,
-	main .main-container .form-changepassword .input-text{
-		margin-top: 15px;
+	main .main-container .form label:not(:last-of-type),
+	main .main-container .form-flightrecords-organizer-detail fieldset label:last-of-type,
+	main .main-container .form-flightrecords-organizer-editadd fieldset label:last-of-type,
+	main .main-container .form-flightrecords-organizer-editadd label:last-of-type,
+	main .main-container .form-inactivedays-organizer-editadd label:last-of-type,
+	main .main-container .form-organizerdata-organizer-detail label:last-of-type{
+		display: block;
+		margin-bottom: 0;
+	}
+	main .main-container .form-forgot-unregistered label{
+		display: inline-block;
+		margin-bottom: 10px;
+	}	
+	main .main-container .form-signin label:nth-last-child(2),
+	/* Select each label that preceded by an <input> element with type="checkbox" */
+	main .main-container form input[type="checkbox"] ~ label:first-of-type,
+	main .main-container form input[type="checkbox"] ~ label:nth-of-type(2),
+	main .main-container .form-spannerdata-organizer-detail label:nth-last-of-type(2),
+	main .main-container .form-spannerdata-organizer-editadd label:nth-last-of-type(2),
+	main .main-container .form-spannerdata-organizer-search label:nth-last-of-type(2){
+		display: inline-block;
 	}
 	main .main-container .form .text-fromto{
 		display: inline-block;
-		vertical-align: middle;
-		margin-top: 0;
-		width: 160px;
-	}
-	main .main-container .form fieldset .text-fromto{ 
-		width: 145px;
-	}
-	/* End input textbox exceptions at mobile mode */
-	main .main-container .form label{
-		display: block
-	}
-	/* Start label exceptions at mobile mode */
-	main .main-container .form-forgot-unregistered label{
-		display: inline-block
+		width: 45%;
+		vertical-align: middle
 	}
 	main .main-container .form label[class="label-fromto"]{
 		display: inline-block;
-		vertical-align: middle;
-		margin-top: 0;
+		margin-bottom: 15px;
+		width: 5%;
+		vertical-align: middle
 	}
-	main .main-container .form label[class="label-endofcheckbox"]{
-		display: inline-block;
-		vertical-align: middle;
+	main .main-container .form fieldset { 
+		width: 100%;
 	}
-	/* End label exceptions at mobile mode */
+	main .main-container .form fieldset .input-checkbox,
+	main .main-container .form fieldset label:first-of-type,
+	main .main-container .form fieldset label:nth-of-type(2){
+		margin-bottom: 10px;
+	}
 }
-/******** End form responsive layout - Browser 550px or less ********/
+/* End form general settings */
+/* Start form specific settings*/
+/* Start signin form */
+main .main-container .form-signin a:first-of-type{	
+	display: block; /* Display the 1st lable as block instead of inline-block */
+}
+main .main-container .form-signin label:last-of-type{	
+	width: 150px;
+}
+/* End signin form */
+/* Start change-password form */
+/* End change-password form */
+/* Start forgot-unregistered form */
+main .main-container .form-forgot-unregistered .input-text{
+	display: inline-block;	
+	width: 185px
+}
+main .main-container .form-forgot-unregistered label:last-of-type{
+	text-align: left;
+	vertical-align: middle;
+	margin-bottom: 15px;
+}
+main .main-container .form-forgot-unregistered label:first-of-type{
+	color: #FF0000;
+	font-size: 17px;
+	display: block;
+	width: 200px;
+	margin-bottom: 15px;
+}
+main .main-container .form-forgot-unregistered .input-text:focus{
+	border-color: #C8CBCF /* Don't change the border as the text box is read only */
+}
+/* End forgot-unregistered form */
+/* Start form-flightrecords-organizer-viewall */
+main .main-container .form-flightrecords-organizer-viewall,
+main .main-container .form-flightsummary-organizer-viewall,
+main .main-container .form-inactivedays-organizer-viewall,
+main .main-container .form-spannerdata-organizer-viewall,
+main .main-container .form-groupdata-organizer-viewall{
+	width: 97%;
+	max-width: 535px;
+}
+/* End form-flightrecords-organizer-viewall */
+
+/* Start form-flightrecords-organizer-detail */
+/* Start form-flightsummary-organizer-detail */
+/* Start form-inactivedays-organizer-detail */
+/* Start form-spannerdata-organizer-detail */
+/* Start form-organizerdata-organizer-detail */
+main .main-container .form-flightrecords-organizer-detail .input-text:nth-child(even),
+main .main-container .form-flightsummary-organizer-detail .input-text:nth-child(even),
+main .main-container .form-inactivedays-organizer-detail .input-text:nth-child(even),
+main .main-container .form-spannerdata-organizer-detail .input-text:nth-child(even),
+main .main-container .form-organizerdata-organizer-detail .input-text:nth-child(even){
+	background-color: #E6E6FA
+}
+/* End form-organizerdata-organizer-detail */
+/* End form-spannerdata-organizer-detail */
+/* End form-inactivedays-organizer-detail */
+/* End form-flightsummary-organizer-detail */
+/* End form-flightrecords-organizer-detail */
+
+
+/* Start form-organizerdata-organizer-detail */
+main .main-container .form-organizerdata-organizer-detail select{
+	height: 55px
+}
+/* End form-organizerdata-organizer-detail */
+/* End form specific settings*/
 /* End main */
 
 /* Start footer */

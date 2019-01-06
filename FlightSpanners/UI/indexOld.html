@@ -157,13 +157,13 @@
 				<form method="POST" class="form form-signin">
 					<br/><input type="text" class="input-text" placeholder="Code">
 					<br/><input type="password" class="input-text" placeholder="Password">
-					<br/><a href="#">Forgot Password?</a>
+					<a href="#">Forgot Password?</a>
 					<br/><input type="submit" class="submit" value="Sign in">
 					<br/><label>Don't have an account?</label>&nbsp;<a href="#">Call Administrator</a>
 				</form>
 				<!-- End of form signin -->
 				<!-- Start of form change-password -->
-				<form method="POST" class="form form-changepassword">
+				<form method="POST" class="form form-change-password">
 					<br/><input type="password" class="input-text" placeholder="Old Password">
 					<br/><input type="password" class="input-text" placeholder="New Password">
 					<br/><input type="password" class="input-text" placeholder="Confirm New Password">
@@ -270,10 +270,10 @@
 					<fieldset>
 						<legend>Flight Data: </legend>
 						<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->					
-						<label class="label-endofcheckbox">Local Flight</label>
+						<label>Local Flight</label>
 						<input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-						<label class="label-endofcheckbox">Cargo Flight</label>	
-						<br/><label>Flight Info: </label>					
+						<label>Cargo Flight</label>	
+						<br/><label>Flight Information: </label>					
 						<input type="text" class="input-text" readonly>
 					</fieldset>							
 					<br/><label>Aircraft Type: </label>
@@ -287,7 +287,7 @@
 					<br/><label>Flight Company: </label>
 					<input type="text" class="input-text" readonly>	
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-					<label class="label-endofcheckbox"> Setteled Record</label>	
+					<label> Setteled Record</label>	
 					<br/><input type="submit" class="submit" value="Edit">
 				</form>
 				<!-- End form flightrecords-organizer-detail -->
@@ -307,10 +307,10 @@
 					<fieldset>
 						<legend>Flight Data:</legend>
 						<br/><input type="checkbox" class="input-checkbox">						
-						<label class="label-endofcheckbox"> Local Flight</label>
+						<label> Local Flight</label>
 						<input type="checkbox" class="input-checkbox">
-						<label class="label-endofcheckbox"> Cargo Flight</label>						
-						<br/><label>Flight Info: </label>
+						<label> Cargo Flight</label>						
+						<br/><label>Flight Information: </label>
 						<select>
 							<option value="">--Select Information--</option>
 							<option value="first">CAI/RUH, 3hrs</option> 
@@ -374,18 +374,18 @@
 					<fieldset>
 						<legend>Flight Data:</legend>
 						<br/><input type="checkbox" class="input-checkbox">						
-						<label class="label-endofcheckbox"> Local Flight</label>
+						<label> Local Flight</label>
 						<input type="checkbox" class="input-checkbox">
-						<label class="label-endofcheckbox"> Cargo Flightt</label>						
-						<br/><label>Flt Sector: </label>
+						<label> Cargo Flightt</label>						
+						<br/><label>Flight Sector: </label>
 						<input type="time" class="input-text text-fromto">
 						<label class="label-fromto"> To </label>
 						<input type="time" class="input-text text-fromto">
-						<br/><label>Flt Bonus: </label>
+						<br/><label>Flight Bounus: </label>
 						<input type="text" class="input-text text-fromto">
 						<label class="label-fromto"> To </label>
 						<input type="text" class="input-text text-fromto">						
-						<br/><label>Flt Path: </label>
+						<br/><label>Flight Path: </label>
 						<select class="text-fromto">
 							<option value="">--Select Origin--</option>
 							<option value="first">CAI</option> 
@@ -400,13 +400,13 @@
 					</fieldset>	
 					<fieldset>
 						<legend>Aircraft Type:</legend>
-						<br/><label>A/C Model: </label>
+						<br/><label>Aircraft Model: </label>
 						<select>
 							<option value="">--Select Aircraft--</option>
 							<option value="first">A320</option> 
 							<option value="second" >A330</option>
 						</select>
-						<br/><label>Eng. Model: </label>
+						<br/><label>Engine Model: </label>
 						<select>
 							<option value="">--Select Engine--</option>
 							<option value="first">CFM</option> 
@@ -415,25 +415,25 @@
 					</fieldset>
 					<fieldset>
 						<legend>Approval:</legend>
-						<br/><label>Code: </label>
+						<br/><label>Spanner Code: </label>
 						<select>
 							<option value="">--Select Code--</option>
 							<option value="first">25316</option> 
 							<option value="second" >83565</option>
 						</select>
-						<br/><label>Licence: </label>
+						<br/><label>Spanner Licence: </label>
 						<select>
 							<option value="">--Select Licence--</option>
 							<option value="first">2146</option> 
 							<option value="second" >2911</option>
 						</select>	
-						<br/><label>Name: </label>
+						<br/><label>Spanner Name: </label>
 						<select>
 							<option value="">--Select Name--</option>
 							<option value="first">Mohamed Ali</option> 
 							<option value="second" >Alaa Ahmed</option>
 						</select>							
-						<br/><label>Rating: </label>
+						<br/><label>Spanner Rating: </label>
 						<select>
 							<option value="">--Select Rating--</option>
 							<option value="first">Airframe</option>
@@ -443,7 +443,7 @@
 							<option value="second" >Avionics</option>
 							<option value="second" >Muli-X</option>
 						</select>
-						<br/><label>Category: </label>
+						<br/><label>Spanner Category: </label>
 						<select>
 							<option value="">--Select Category--</option>
 							<option value="first">B1</option>
@@ -469,7 +469,7 @@
 						<option value="second" >AirCairo</option>
 					</select>
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> Setteled Record</label>	
+					<label> Setteled Record</label>	
 					<br/><input type="submit" class="submit" value="Search">
 				</form>
 				<!-- End of form flightrecords-organizer-search -->
@@ -551,11 +551,11 @@
 					<input type="text" class="input-text" readonly>	
 					<fieldset>
 						<legend>Spanner Info:</legend>
-						<br/><label>Code: </label>
+						<br/><label>Spanner Code: </label>
 						<input type="text" class="input-text" readonly>	
-						<br/><label>Licence: </label>
+						<br/><label>Spanner Licence: </label>
 						<input type="text" class="input-text" readonly>					
-						<br/><label>Name: </label>
+						<br/><label>Spanner Name: </label>
 						<input type="text" class="input-text" readonly>
 					</fieldset>
 					<br/><label>Deserved Flights: </label>
@@ -579,7 +579,7 @@
 					<br/><label>Month Flights: </label>
 					<input type="text" class="input-text" readonly>						
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-					<label class="label-endofcheckbox">Currently InActive</label>	
+					<label>Currently InActive</label>	
 				</form>
 				<!-- End of form flightsummary-organizer-detail -->
 				<!-- Start of form flightsummary-organizer-search -->
@@ -593,19 +593,19 @@
 					</select>
 					<fieldset>
 						<legend>Spanner Information:</legend>					
-						<br/><label>Code: </label>
+						<br/><label>Spanner Code: </label>
 						<select>
 							<option value="">--Select Code--</option>
 							<option value="first">65321</option> 
 							<option value="second" >25617</option>
 						</select>
-						<br/><label>Licence: </label>
+						<br/><label>Spanner Licence: </label>
 						<select>
 							<option value="">--Select Licence--</option>
 							<option value="first">2329</option> 
 							<option value="second" >2715</option>
 						</select>					
-						<br/><label>Name: </label>
+						<br/><label>Spanner Name: </label>
 						<select>
 							<option value="">--Select Name--</option>
 							<option value="first">Mohamed Ali</option> 
@@ -653,7 +653,7 @@
 					<label class="label-fromto"> To </label>
 					<input type="text" class="input-text text-fromto">																											
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> Currently InActive</label>	
+					<label> Currently InActive</label>	
 					<br/><input type="submit" class="submit" value="Search">
 				</form>
 				<!-- End of form flightsummary-organizer-search -->
@@ -735,11 +735,11 @@
 					<input type="text" class="input-text" readonly>
 					<fieldset>
 						<legend>Spanner Information:</legend>
-						<br/><label>Code: </label>
+						<br/><label>Spanner Code: </label>
 						<input type="text" class="input-text" readonly>	
-						<br/><label>Licence: </label>
+						<br/><label>Spanner Licence: </label>
 						<input type="text" class="input-text" readonly>					
-						<br/><label>Name: </label>
+						<br/><label>Spanner Name: </label>
 						<input type="text" class="input-text" readonly>
 					</fieldset>
 					<br/><label>InActive Days: </label>
@@ -749,7 +749,7 @@
 					<br/><label>End Date: </label>
 					<input type="date" class="input-text" readonly>	
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-					<label class="label-endofcheckbox">Currently InActive</label>	
+					<label>Currently InActive</label>	
 					<br/><input type="submit" class="submit" value="Edit">
 				</form>
 				<!-- End of form inactivedays-organizer-detail -->
@@ -762,7 +762,7 @@
 						<option value="second" >Second Group</option>
 						<option value="third">Third Group</option>
 					</select>
-					<br/><label>Spanner Info: </label>
+					<br/><label>Spanner Information: </label>
 					<select>
 						<option value="">--Select Information--</option>
 						<option value="first">Ahmed Ragaee, 65321, 2329</option> 
@@ -786,19 +786,19 @@
 					</select>
 					<fieldset>
 						<legend>Spanner Information:</legend>
-						<br/><label>Code: </label>
+						<br/><label>Spanner Code: </label>
 						<select>
 							<option value="">--Select Code--</option>
 							<option value="first">65321</option> 
 							<option value="second" >25617</option>
 						</select>
-						<br/><label>Licence: </label>
+						<br/><label>Spanner Licence: </label>
 						<select>
 							<option value="">--Select Licence--</option>
 							<option value="first">2329</option> 
 							<option value="second" >2734</option>
 						</select>						
-						<br/><label>Name: </label>
+						<br/><label>Spanner Name: </label>
 						<select>
 							<option value="">--Select Name--</option>
 							<option value="first">Ahmed Ragaee</option> 
@@ -932,9 +932,9 @@
 					<br/><label>Hire Date: </label>
 					<input type="date" class="input-text" readonly>
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-					<label class="label-endofcheckbox"> Has a Car</label>																																									
+					<label> Has a Car</label>																																									
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-					<label class="label-endofcheckbox"> View Group Data</label>	
+					<label> View Group Data</label>	
 					<br/><input type="submit" class="submit" value="Edit">
 				</form>
 				<!-- End form spannerdata-organizer-detail -->
@@ -1006,9 +1006,9 @@
 					<br/><label>Hire Date: </label>
 					<input type="date" class="input-text">
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> Has a Car</label>																																								
+					<label> Has a Car</label>																																								
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> View Group Data</label>	
+					<label> View Group Data</label>	
 					<br/><input type="submit" class="submit" value="Save">
 				</form>
 				<!-- End of form spannerdata-organizer-editadd -->
@@ -1120,9 +1120,9 @@
 					<label class="label-fromto"> To </label>
 					<input type="date" class="input-text text-fromto">
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> Has a Car</label>					
+					<label> Has a Car</label>					
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> View Group Data</label>	
+					<label> View Group Data</label>	
 					<br/><input type="submit" class="submit" value="Save">
 				</form>
 				<!-- End of form spannerdata-organizer-search -->
@@ -1204,11 +1204,11 @@
 					<input type="text" class="input-text" readonly>
 					<fieldset>
 						<legend>Spanner Information:</legend>
-						<br/><label>Code: </label>
+						<br/><label>Spanner Code: </label>
 						<input type="text" class="input-text" readonly>	
-						<br/><label>Licence: </label>
+						<br/><label>Spanner Licence: </label>
 						<input type="text" class="input-text" readonly>					
-						<br/><label>Name: </label>
+						<br/><label>Spanner Name: </label>
 						<input type="text" class="input-text" readonly>
 					</fieldset>
 					<br/><label>Approval Rating: </label>
@@ -1217,9 +1217,9 @@
 					<input type="text" class="input-text" readonly>
 					<fieldset>
 						<legend>Aircraft Type:</legend>					
-						<br/><label>A/C Model: </label>
+						<br/><label>Aircraft Model: </label>
 						<input type="text" class="input-text" readonly>	
-						<br/><label>Eng. Model: </label>
+						<br/><label>Engine Model: </label>
 						<input type="text" class="input-text" readonly>
 					</fieldset>
 					<br/><input type="submit" class="submit" value="Edit">
@@ -1234,13 +1234,13 @@
 						<option value="second" >Second Group</option>
 						<option value="third">Third Group</option>
 					</select>
-					<br/><label>Spanner Info: </label>
+					<br/><label>Spanner Information: </label>
 					<select>
 						<option value="">--Select Information--</option>
 						<option value="first">Ahmed Ragaee, 65321, 2329</option> 
 						<option value="second" >Saleh Mohamed, 25617, 2734</option>
 					</select>
-					<br/><label>Approval Rating: </label>
+					<br/><label>Spaner Rating: </label>
 					<select>
 						<option value="">--Select Rating--</option>
 						<option value="first">Airframe</option>
@@ -1250,7 +1250,7 @@
 						<option value="second" >Avionics</option>
 						<option value="second" >Muli-X</option>
 					</select>
-					<br/><label>Approval Category: </label>
+					<br/><label>Spanner Category: </label>
 					<select>
 						<option value="">--Select Category--</option>
 						<option value="first">B1</option>
@@ -1258,13 +1258,13 @@
 					</select>
 					<fieldset>
 						<legend>Aircraft Type:</legend>
-						<br/><label>A/C Model: </label>
+						<br/><label>Aircraft Model: </label>
 						<select>
 							<option value="">--Select Aircraft--</option>
 							<option value="first">A320</option> 
 							<option value="second" >A330</option>
 						</select>
-						<br/><label>Eng. Model: </label>
+						<br/><label>Engine Model: </label>
 						<select>
 							<option value="">--Select Engine--</option>
 							<option value="first">CFM</option> 
@@ -1285,26 +1285,26 @@
 						</select>
 						<fieldset>
 							<legend>Spanner Information:</legend>
-							<br/><label>Code: </label>
+							<br/><label>Spanner Code: </label>
 							<select>
 								<option value="">--Select Code--</option>
 								<option value="first">65321</option> 
 								<option value="second" >25617</option>
 							</select>
-							<br/><label>Licence: </label>
+							<br/><label>Spanner Licence: </label>
 							<select>
 								<option value="">--Select Licence--</option>
 								<option value="first">2329</option> 
 								<option value="second" >2734</option>
 							</select>						
-							<br/><label>Name: </label>
+							<br/><label>Spanner Name: </label>
 							<select>
 								<option value="">--Select Name--</option>
 								<option value="first">Ahmed Ragaee</option> 
 								<option value="second" >Saleh Mohamed</option>
 							</select>												
 						</fieldset>
-						<br/><label>Aproval Rating: </label>
+						<br/><label>Spanner Rating: </label>
 						<select>
 							<option value="">--Select Rating--</option>
 							<option value="first">Airframe</option>
@@ -1314,7 +1314,7 @@
 							<option value="second" >Avionics</option>
 							<option value="second" >Muli-X</option>
 						</select>
-						<br/><label>Aproval Category: </label>
+						<br/><label>Spanner Category: </label>
 						<select>
 							<option value="">--Select Category--</option>
 							<option value="first">B1</option>
@@ -1322,13 +1322,13 @@
 						</select>
 						<fieldset>
 							<legend>Aircraft Type:</legend>
-							<br/><label>A/C Model: </label>
+							<br/><label>Aircraft Model: </label>
 							<select>
 								<option value="">--Select Aircraft--</option>
 								<option value="first">A320</option> 
 								<option value="second" >A330</option>
 							</select>
-							<br/><label>Eng. Model: </label>
+							<br/><label>Engine Model: </label>
 							<select>
 								<option value="">--Select Engine--</option>
 								<option value="first">CFM</option> 
@@ -1402,7 +1402,7 @@
 					<br/><label>Record Starting: </label>
 					<input type="date" class="input-text">
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> Sector Time</label>
+					<label> Calculation based on Sector Time</label>
 					<br/><input type="submit" class="submit" value="Save">
 				</form>
 				<!-- End of form groupdata-organizer-editadd -->
@@ -1420,7 +1420,7 @@
 					<label class="label-fromto"> To </label>
 					<input type="date" class="input-text text-fromto">
 					<br/><input type="checkbox" class="input-checkbox">
-					<label class="label-endofcheckbox"> Sector Time</label>
+					<label> Calculation based on Sector Time</label>
 					<br/><input type="submit" class="submit" value="Search">
 				</form>
 				<!-- End of form groupdata-organizer-search -->										
