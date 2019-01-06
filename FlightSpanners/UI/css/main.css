@@ -476,7 +476,7 @@ main .main-container .form table th{
 		display: block
 	}
 	/* Start label exceptions at mobile mode */
-	main .main-container .form-forgot-unregistered label{
+	main .main-container .form-forgot-unregistered label:first-of-type{
 		display: inline-block
 	}
 	main .main-container .form label[class="label-fromto"]{
