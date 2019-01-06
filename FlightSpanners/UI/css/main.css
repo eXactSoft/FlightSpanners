@@ -438,6 +438,7 @@ main .main-container .form table th{
 	/* At width < 550px the label will be on the top of the textbox & select */
 	main .main-container .form{
 		width: 330px;
+		margin-left: 0
 		/*margin: 0 auto !important;*/
 	}
 	/* Start form exceptions at mobile mode */
