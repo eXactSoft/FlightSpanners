@@ -332,7 +332,7 @@ main .main-container .form fieldset {
 	font-size: 14px;
 	color: #58595B;
 	width: 70%;
-	margin-top: 15px
+	margin-top: 30px
 }
 /* Start fieldset Exceptons */
 main .main-container .form-flightrecords-organizer-search fieldset{
@@ -437,7 +437,7 @@ main .main-container .form table th{
 @media only screen and (max-width: 650px){
 	/* At width < 550px the label will be on the top of the textbox & select */
 	main .main-container .form{
-		width: 350px;
+		width: 330px;
 		/*margin: 0 auto !important;*/
 	}
 	/* Start form exceptions at mobile mode */
@@ -451,7 +451,7 @@ main .main-container .form table th{
 		max-width: 300px;
 	}
 	main .main-container .form fieldset { 
-		width: 100%;
+		width: 97%;
 	}
 	main .main-container .form .input-text,
 	main .main-container .form select{
@@ -466,17 +466,18 @@ main .main-container .form table th{
 		display: inline-block;
 		vertical-align: middle;
 		margin-top: 0;
-		width: 160px;
+		width: 150px;
 	}
 	main .main-container .form fieldset .text-fromto{ 
-		width: 145px;
+		width: 130px;
 	}
 	/* End input textbox exceptions at mobile mode */
 	main .main-container .form label{
 		display: block
 	}
 	/* Start label exceptions at mobile mode */
-	main .main-container .form-forgot-unregistered label:first-of-type{
+	main .main-container .form-forgot-unregistered label:first-of-type,
+	main .main-container .form-signin label{
 		display: inline-block
 	}
 	main .main-container .form label[class="label-fromto"]{
