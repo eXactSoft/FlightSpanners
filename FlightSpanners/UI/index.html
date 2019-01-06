@@ -39,20 +39,26 @@
 			</div>
       <div class="icon-right">
 				<p>
-					<i class="fas fa-user-circle"></i> <br> <span>Personal Data</span>
-				</p>				
+					<i class="far fa-user-circle"></i> <br> <span>Personal Data</span>
+				</p>
 				<p>
-					<i class="fas fa-users-cog"></i> <br> <span>Spanners Data</span>
-				</p>				
+					<i class="fas fa-users"></i> <br> <span>Group Data</span>
+				</p>
+				<p>
+					<i class="far fa-id-card"></i> <br> <span>Approvals</span>
+				</p>
+				<p>
+					<i class="far fa-user"></i> <br> <span>Spanners Data</span>
+				</p>
 				<p>
 					<i class="fas fa-user-slash"></i> <br> <span>In-Active Days</span>
-				</p>				
+				</p>
 				<p>
 					<i class="fas fa-plane"></i> <br> <span>Flights Summary</span>
-				</p>				
+				</p>
 				<p>
 					<i class="fas fa-plane-departure"></i> <br> <span>Flight Records</span>
-				</p>				
+				</p>
         <p>
 					<i class="fas fa-sign-in-alt"></i> <br> <span>Sign in</span>
 				</p>
@@ -84,14 +90,14 @@
 						<ul class="ul-sub">
 							<li><a href="#">Add</a></li>
 							<li><a href="#">View Unprocessed</a></li>
-							<li><a href="#">View Group</a></li>
+							<li><a href="#">View All</a></li>
 							<li><a href="#">Search</a></li>
 						</ul>
 					</li>
 					<li>
 						<span><i class="fas fa-plane"></i>&nbsp;Flights Summary</span>
 						<ul class="ul-sub">
-								<li><a href="#">View Group</a></li>
+								<li><a href="#">View All</a></li>
 								<li><a href="#">Search</a></li>
 						</ul>
 					</li>
@@ -99,17 +105,33 @@
 						<span><i class="fas fa-user-slash"></i>&nbsp;In-Active Days</span>
 						<ul class="ul-sub">
 								<li><a href="#">Add</a></li>
-								<li><a href="#">View Group</a></li>
+								<li><a href="#">View All</a></li>
 								<li><a href="#">Search</a></li>
 						</ul>						
 					</li>
 					<li>
-						<span><i class="fas fa-users-cog"></i>&nbsp;Spanners Data</span>
+						<span><i class="fas fa-user"></i>&nbsp;Spanners Data</span>
 						<ul class="ul-sub">
 								<li><a href="#">Add</a></li>
-								<li><a href="#">View Group</a></li>
+								<li><a href="#">View All</a></li>
 								<li><a href="#">Search</a></li>
 						</ul>				
+					</li>
+					<li>
+						<span><i class="fas fa-id-card"></i>&nbsp;Approvals</span>
+						<ul class="ul-sub">
+								<li><a href="#">Add</a></li>
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+						</ul>						
+					</li>					
+					<li>
+						<span><i class="fas fa-users"></i>&nbsp;Group Data</span>
+						<ul class="ul-sub">
+								<li><a href="#">Add</a></li>
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+						</ul>						
 					</li>
 					<li>
 						<span><i class="fas fa-user-circle"></i>&nbsp;Personal Data</span>
@@ -117,7 +139,7 @@
 								<li><a href="#">View Mine</a></li>
 								<li><a href="#">Change Password</a></li>
 						</ul>						
-					</li>
+					</li>					
 					<li>
 						<a href="#"><i class="fas fa-sign-out-alt"></i>&nbsp;Log out</a>
 					</li>
@@ -133,49 +155,38 @@
 			<div class="main-container">
 				<!-- Start of form signin -->										
 				<form method="POST" class="form form-signin">
-					<input type="text" class="input-text" placeholder="Code">
-					<input type="password" class="input-text" placeholder="Password">
+					<br/><input type="text" class="input-text" placeholder="Code">
+					<br/><input type="password" class="input-text" placeholder="Password">
 					<a href="#">Forgot Password?</a>
-					<input type="submit" class="submit" value="Sign in">
-					<label>Don't have an account?</label>&nbsp;<a href="#">Call Organizer</a>
+					<br/><input type="submit" class="submit" value="Sign in">
+					<br/><label>Don't have an account?</label>&nbsp;<a href="#">Call Administrator</a>
 				</form>
 				<!-- End of form signin -->
 				<!-- Start of form change-password -->
 				<form method="POST" class="form form-change-password">
-					<input type="password" class="input-text" placeholder="Old Password">
-					<input type="password" class="input-text" placeholder="New Password">
-					<input type="password" class="input-text" placeholder="Confirm New Password">
-					<input type="submit" class="submit" value="Change Password">
+					<br/><input type="password" class="input-text" placeholder="Old Password">
+					<br/><input type="password" class="input-text" placeholder="New Password">
+					<br/><input type="password" class="input-text" placeholder="Confirm New Password">
+					<br/><input type="submit" class="submit" value="Change Password">
 				</form>
 				<!-- End of form change-password -->
 				<!-- Start of form forgot -->
 				<form method="GET" class="form form-forgot-unregistered">
-					<label>Forgot Password</label>
-					<select>
-						<option value="">--Select Group--</option>
-						<option value="first">First Group</option> 
-						<option value="second" >Second Group</option>
-						<option value="third">Third Group</option>
-					</select>
-					<br/><label>Call Organizer at: </label>
+					<br/><label>Forgot Password</label>
+					<br/><label>Call Administrator at: </label>
 					<input type="text" class="input-text" readonly >
 				</form>
 				<!-- End of form forgot -->
 				<!-- Start of form unregistered  -->
 				<form method="GET" class="form form-forgot-unregistered">
-					<label>Unregistered User</label>
-					<select>
-						<option value="">--Select Group--</option>
-						<option value="first">First Group</option> 
-						<option value="second" >Second Group</option>
-						<option value="third">Third Group</option>
-					</select>
-					<br/><label>Call Organizer at: </label>
+					<br/><label>Unregistered User</label>
+					<br/><label>Call Administrator at: </label>
 					<input type="text" class="input-text" readonly >
 				</form>
 				<!-- End of form unregistered  -->
 				<!-- Start of form flightrecords-organizer-viewall &lang;&lt;&lsaquo;-->
 				<form method="GET" class="form form-flightrecords-organizer-viewall">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
@@ -186,11 +197,12 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Flt Date</th>
+									<th>Flight<br/>Date</th>
 									<th>Time</th>
 									<th>From</th>
-									<th>To</th>	
-									<th>Code</th>
+									<th>To</th>
+									<th>Spanner<br/>Name</th>
+									<th>Spanner<br/>Code</th>
 									<th></th>																
 								</tr>
 							</thead>
@@ -200,6 +212,7 @@
 									<td>18:30</td>
 									<td>CAI</td>
 									<td>RUH</td>
+									<td>Mohamed Wahid</td>
 									<td>65321</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
@@ -208,6 +221,7 @@
 									<td>18:30</td>
 									<td>CAI</td>
 									<td>RUH</td>
+									<td>Ahmed Hanafy</td>
 									<td>65321</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
@@ -216,13 +230,14 @@
 									<td>18:30</td>
 									<td>CAI</td>
 									<td>RUH</td>
+									<td>Jamal Atia</td>
 									<td>65321</td>
 									<td><a href="#">Detail</a></td>
 								</tr>							
 							</tbody>
 							<tfoot>
 								<tr>
-									<td colspan="6">
+									<td colspan="7">
 										<div class="pagination">
 											<a href="#">&laquo;</a>
 											<a href="#">❮</a>
@@ -242,9 +257,9 @@
 					</div>
 				</form>
 				<!-- End form flightrecords-organizer-viewall -->
-				<!-- Start form flightrecords-organizer-detail &lang;&lt;&lsaquo;-->
+				<!-- Start form flightrecords-organizer-detail -->
 				<form method="GET" class="form form-flightrecords-organizer-detail">
-					<label>Group: </label>
+					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>
 					<br/><label>Record Date: </label>
 					<input type="text" class="input-text" readonly>					
@@ -252,14 +267,19 @@
 					<input type="text" class="input-text" readonly>
 					<br/><label>Flight Time: </label>
 					<input type="text" class="input-text" readonly>
-					<br/><label>Flight Path: </label>
-					<input type="text" class="input-text" readonly>
+					<fieldset>
+						<legend>Flight Data: </legend>
+						<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->					
+						<label>Local Flight</label>
+						<input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
+						<label>Cargo Flight</label>	
+						<br/><label>Flight Information: </label>					
+						<input type="text" class="input-text" readonly>
+					</fieldset>							
 					<br/><label>Aircraft Type: </label>
 					<input type="text" class="input-text" readonly>
-					<br/><label>Spanner Code: </label>
+					<br/><label>Approval Detail: </label>
 					<input type="text" class="input-text" readonly>	
-					<br/><label>Spanner Name: </label>
-					<input type="text" class="input-text" readonly>
 					<br/><label>Destination Type: </label>
 					<input type="text" class="input-text" readonly>	
 					<br/><label>Eligibility Type: </label>
@@ -273,6 +293,7 @@
 				<!-- End form flightrecords-organizer-detail -->
 				<!-- Start form flightrecords-organizer-editadd -->
 				<form method="GET" class="form form-flightrecords-organizer-editadd">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
@@ -283,26 +304,31 @@
 					<input type="date" class="input-text">
 					<br/><label>Flight Time: </label>
 					<input type="time" class="input-text">
-					<br/><label>Flight Path: </label>
-					<select>
-						<option value="">--Select Path--</option>
-						<option value="first">CAI/RUH</option> 
-						<option value="second" >CAI/ADD</option>
-					</select>					
+					<fieldset>
+						<legend>Flight Data:</legend>
+						<br/><input type="checkbox" class="input-checkbox">						
+						<label> Local Flight</label>
+						<input type="checkbox" class="input-checkbox">
+						<label> Cargo Flight</label>						
+						<br/><label>Flight Information: </label>
+						<select>
+							<option value="">--Select Information--</option>
+							<option value="first">CAI/RUH, 3hrs</option> 
+							<option value="second" >CAI/ADD, 2.5hrs, 2Bonus</option>
+						</select>
+					</fieldset>
 					<br/><label>Aircraft Type: </label>
 					<select>
 						<option value="">--Select Type--</option>
-						<option value="first">A320-CFM</option> 
-						<option value="second" >A330-Trent</option>
+						<option value="first">A320, CFM</option> 
+						<option value="second" >A330, Trent</option>
 					</select>
-					<br/><label>Spanner Code: </label>
+					<br/><label>Approval Detail: </label>
 					<select>
-						<option value="">--Select Code--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
+						<option value="">--Select Detail--</option>
+						<option value="first">Mohamed Ali, 25316, A&C, B1</option> 
+						<option value="second" >Alaa Ahmed, 83565, Elec, B2</option>
 					</select>
-					<br/><label>Spanner Name: </label>
-					<input type="text" class="input-text">
 					<br/><label>Destination Type: </label>
 					<select>
 						<option value="">--Select Type--</option>
@@ -326,6 +352,7 @@
 				<!-- End of form flightrecords-organizer-editadd -->		
 				<!-- Start of form flightrecords-organizer-search -->
 				<form method="GET" class="form form-flightrecords-organizer-search">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
@@ -344,32 +371,85 @@
 					<input type="time" class="input-text text-fromto">
 					<label class="label-fromto"> To </label>
 					<input type="time" class="input-text text-fromto">
-					<br/><label>Flight Path: </label>
-					<select class="text-fromto">
-						<option value="">--Select Origin--</option>
-						<option value="first">CAI</option> 
-						<option value="second">CAI</option>
-					</select>
-					<label class="label-fromto"> To </label>
-					<select class="text-fromto">
-						<option value="">--Select Dest.--</option>
-						<option value="first">RUH</option> 
-						<option value="second">ADD</option>
-					</select>					
-					<br/><label>Aircraft Type: </label>
-					<select>
-						<option value="">--Select Type--</option>
-						<option value="first">A320-CFM</option> 
-						<option value="second" >A330-Trent</option>
-					</select>
-					<br/><label>Spanner Code: </label>
-					<select>
-						<option value="">--Select Code--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
-					</select>
-					<br/><label>Spanner Name: </label>
-					<input type="text" class="input-text">
+					<fieldset>
+						<legend>Flight Data:</legend>
+						<br/><input type="checkbox" class="input-checkbox">						
+						<label> Local Flight</label>
+						<input type="checkbox" class="input-checkbox">
+						<label> Cargo Flightt</label>						
+						<br/><label>Flight Sector: </label>
+						<input type="time" class="input-text text-fromto">
+						<label class="label-fromto"> To </label>
+						<input type="time" class="input-text text-fromto">
+						<br/><label>Flight Bounus: </label>
+						<input type="text" class="input-text text-fromto">
+						<label class="label-fromto"> To </label>
+						<input type="text" class="input-text text-fromto">						
+						<br/><label>Flight Path: </label>
+						<select class="text-fromto">
+							<option value="">--Select Origin--</option>
+							<option value="first">CAI</option> 
+							<option value="second">CAI</option>
+						</select>
+						<label class="label-fromto"> To </label>
+						<select class="text-fromto">
+							<option value="">--Select Destination--</option>
+							<option value="first">RUH</option> 
+							<option value="second">ADD</option>
+						</select>							
+					</fieldset>	
+					<fieldset>
+						<legend>Aircraft Type:</legend>
+						<br/><label>Aircraft Model: </label>
+						<select>
+							<option value="">--Select Aircraft--</option>
+							<option value="first">A320</option> 
+							<option value="second" >A330</option>
+						</select>
+						<br/><label>Engine Model: </label>
+						<select>
+							<option value="">--Select Engine--</option>
+							<option value="first">CFM</option> 
+							<option value="second" >Trent</option>
+						</select>						
+					</fieldset>
+					<fieldset>
+						<legend>Approval:</legend>
+						<br/><label>Spanner Code: </label>
+						<select>
+							<option value="">--Select Code--</option>
+							<option value="first">25316</option> 
+							<option value="second" >83565</option>
+						</select>
+						<br/><label>Spanner Licence: </label>
+						<select>
+							<option value="">--Select Licence--</option>
+							<option value="first">2146</option> 
+							<option value="second" >2911</option>
+						</select>	
+						<br/><label>Spanner Name: </label>
+						<select>
+							<option value="">--Select Name--</option>
+							<option value="first">Mohamed Ali</option> 
+							<option value="second" >Alaa Ahmed</option>
+						</select>							
+						<br/><label>Spanner Rating: </label>
+						<select>
+							<option value="">--Select Rating--</option>
+							<option value="first">Airframe</option>
+							<option value="second" >Engine</option>
+							<option value="first">Airframe & Engine</option>
+							<option value="second" >Elec</option>
+							<option value="second" >Avionics</option>
+							<option value="second" >Muli-X</option>
+						</select>
+						<br/><label>Spanner Category: </label>
+						<select>
+							<option value="">--Select Category--</option>
+							<option value="first">B1</option>
+							<option value="second" >B2</option>
+						</select>
+					</fieldset>						
 					<br/><label>Destination Type: </label>
 					<select>
 						<option value="">--Select Type--</option>
@@ -395,6 +475,7 @@
 				<!-- End of form flightrecords-organizer-search -->
 				<!-- Start of form flightsummary-organizer-viewall -->
 				<form method="GET" class="form form-flightsummary-organizer-viewall">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option>
@@ -405,8 +486,8 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Code</th>
-									<th>Name</th>
+									<th>Spanner<br/>Name</th>									
+									<th>Spanner<br/>Code</th>
 									<th>Deserved<br/>Flights</th>
 									<th>InActive<br/>Days</th>	
 									<th></th>																
@@ -414,29 +495,29 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>65321</td>
 									<td>Mohamed ElMansoury</td>
+									<td>65321</td>
 									<td>4</td>
 									<td>104</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
 								<tr>
-									<td>82311</td>
 									<td>Ahmed Samir</td>
+									<td>82311</td>
 									<td>0</td>
 									<td>75</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
 								<tr>
+									<td>Yehia Kamel</td>									
 									<td>25321</td>
-									<td>Yehia Kamel</td>
 									<td>2</td>
 									<td>0</td>									
 									<td><a href="#">Detail</a></td>
 								</tr>						
 								<tr>
+									<td>Hany Jamal</td>									
 									<td>63123</td>
-									<td>Hany Jamal</td>
 									<td>1</td>
 									<td>91</td>									
 									<td><a href="#">Detail</a></td>
@@ -466,14 +547,17 @@
 				<!-- End of form flightsummary-organizer-viewall -->
 				<!-- Start of form flightsummary-organizer-detail -->
 				<form method="GET" class="form form-flightsummary-organizer-detail">
-					<label>Group: </label>
+					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>	
-					<br/><label>Code: </label>
-					<input type="text" class="input-text" readonly>					
-					<br/><label>Licence Number: </label>
-					<input type="text" class="input-text" readonly>
-					<br/><label>Name: </label>
-					<input type="text" class="input-text" readonly>
+					<fieldset>
+						<legend>Spanner Info:</legend>
+						<br/><label>Spanner Code: </label>
+						<input type="text" class="input-text" readonly>	
+						<br/><label>Spanner Licence: </label>
+						<input type="text" class="input-text" readonly>					
+						<br/><label>Spanner Name: </label>
+						<input type="text" class="input-text" readonly>
+					</fieldset>
 					<br/><label>Deserved Flights: </label>
 					<input type="text" class="input-text" readonly>
 					<br/><label>Balance: </label>
@@ -495,31 +579,39 @@
 					<br/><label>Month Flights: </label>
 					<input type="text" class="input-text" readonly>						
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-					<label> Currently InActive</label>	
+					<label>Currently InActive</label>	
 				</form>
 				<!-- End of form flightsummary-organizer-detail -->
 				<!-- Start of form flightsummary-organizer-search -->
 				<form method="GET" class="form form-flightsummary-organizer-search">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
 						<option value="second" >Second Group</option>
 						<option value="third">Third Group</option>
 					</select>
-					<br/><label>Spanner Code: </label>
-					<select>
-						<option value="">--Select Code--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
-					</select>
-					<br/><label>Spanner Licence: </label>
-					<select>
-						<option value="">--Select Licence--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
-					</select>					
-					<br/><label>Spanner Name: </label>
-					<input type="text" class="input-text">					
+					<fieldset>
+						<legend>Spanner Information:</legend>					
+						<br/><label>Spanner Code: </label>
+						<select>
+							<option value="">--Select Code--</option>
+							<option value="first">65321</option> 
+							<option value="second" >25617</option>
+						</select>
+						<br/><label>Spanner Licence: </label>
+						<select>
+							<option value="">--Select Licence--</option>
+							<option value="first">2329</option> 
+							<option value="second" >2715</option>
+						</select>					
+						<br/><label>Spanner Name: </label>
+						<select>
+							<option value="">--Select Name--</option>
+							<option value="first">Mohamed Ali</option> 
+							<option value="second" >Alaa Ahmed</option>
+						</select>
+					</fieldset>
 					<br/><label>Deserved Flights: </label>
 					<input type="text" class="input-text text-fromto">
 					<label class="label-fromto"> To </label>
@@ -567,6 +659,7 @@
 				<!-- End of form flightsummary-organizer-search -->
 				<!-- Start of form inactivedays-organizer-viewall -->
 				<form method="GET" class="form form-inactivedays-organizer-viewall">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option>
@@ -577,8 +670,8 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Code</th>
-									<th>Name</th>
+									<th>Spanner<br/>Name</th>
+									<th>Spanner<br/>Code</th>
 									<th>InActive<br/>Now</th>										
 									<th>InActive<br/>Days</th>
 									<th></th>																
@@ -586,29 +679,29 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>65321</td>
 									<td>Mohamed ElMansoury</td>
+									<td>65321</td>
 									<td>true</td>
 									<td>104</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
 								<tr>
-									<td>82311</td>
 									<td>Ahmed Samir</td>
+									<td>82311</td>
 									<td>false</td>
 									<td>75</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
 								<tr>
-									<td>25321</td>
 									<td>Yehia Kamel</td>
+									<td>25321</td>
 									<td>false</td>
 									<td>0</td>									
 									<td><a href="#">Detail</a></td>
 								</tr>						
 								<tr>
-									<td>63123</td>
 									<td>Hany Jamal</td>
+									<td>63123</td>
 									<td>true</td>
 									<td>91</td>									
 									<td><a href="#">Detail</a></td>
@@ -638,12 +731,17 @@
 				<!-- End of form inactivedays-organizer-viewall -->
 				<!-- Start of form inactivedays-organizer-detail -->
 				<form method="GET" class="form form-inactivedays-organizer-detail">
-					<label>Group: </label>
+					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>
-					<br/><label>Spanner Code: </label>
-					<input type="text" class="input-text" readonly>					
-					<br/><label>Spanner Name: </label>
-					<input type="text" class="input-text" readonly>
+					<fieldset>
+						<legend>Spanner Information:</legend>
+						<br/><label>Spanner Code: </label>
+						<input type="text" class="input-text" readonly>	
+						<br/><label>Spanner Licence: </label>
+						<input type="text" class="input-text" readonly>					
+						<br/><label>Spanner Name: </label>
+						<input type="text" class="input-text" readonly>
+					</fieldset>
 					<br/><label>InActive Days: </label>
 					<input type="text" class="input-text" readonly>
 					<br/><label>Start Date: </label>
@@ -651,51 +749,62 @@
 					<br/><label>End Date: </label>
 					<input type="date" class="input-text" readonly>	
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
-					<label> Currently InActive</label>	
+					<label>Currently InActive</label>	
 					<br/><input type="submit" class="submit" value="Edit">
 				</form>
 				<!-- End of form inactivedays-organizer-detail -->
 				<!-- Start of form inactivedays-organizer-editadd -->
 				<form method="GET" class="form form-inactivedays-organizer-editadd">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
 						<option value="second" >Second Group</option>
 						<option value="third">Third Group</option>
 					</select>
-					<br/><label>Spanner Code: </label>
+					<br/><label>Spanner Information: </label>
 					<select>
-						<option value="">--Select Code--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
+						<option value="">--Select Information--</option>
+						<option value="first">Ahmed Ragaee, 65321, 2329</option> 
+						<option value="second" >Saleh Mohamed, 25617, 2734</option>
 					</select>
-					<br/><label>Spanner Name: </label>
-					<input type="text" class="input-text">
 					<br/><label>Start Date: </label>
 					<input type="date" class="input-text">
 					<br/><label>End Date: </label>
 					<input type="date" class="input-text">
-					<br/><label>InActive Days: </label>
-					<input type="text" class="input-text">
 					<br/><input type="submit" class="submit" value="Save">
 				</form>
 				<!-- End of form inactivedays-organizer-editadd -->
 				<!-- Start of form inactivedays-organizer-search -->
 				<form method="GET" class="form form-inactivedays-organizer-search">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
 						<option value="second" >Second Group</option>
 						<option value="third">Third Group</option>
 					</select>
-					<br/><label>Spanner Code: </label>
-					<select>
-						<option value="">--Select Code--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
-					</select>
-					<br/><label>Spanner Name: </label>
-					<input type="text" class="input-text">					
+					<fieldset>
+						<legend>Spanner Information:</legend>
+						<br/><label>Spanner Code: </label>
+						<select>
+							<option value="">--Select Code--</option>
+							<option value="first">65321</option> 
+							<option value="second" >25617</option>
+						</select>
+						<br/><label>Spanner Licence: </label>
+						<select>
+							<option value="">--Select Licence--</option>
+							<option value="first">2329</option> 
+							<option value="second" >2734</option>
+						</select>						
+						<br/><label>Spanner Name: </label>
+						<select>
+							<option value="">--Select Name--</option>
+							<option value="first">Ahmed Ragaee</option> 
+							<option value="second" >Saleh Mohamed</option>
+						</select>												
+					</fieldset>
 					<br/><label>Start Date: </label>
 					<input type="date" class="input-text text-fromto">
 					<label class="label-fromto"> To </label>
@@ -713,6 +822,7 @@
 				<!-- End of form inactivedays-organizer-search -->
 				<!-- Start of form spannerdata-organizer-viewall -->
 				<form method="GET" class="form form-spannerdata-organizer-viewall">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option>
@@ -723,39 +833,39 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Code</th>
-									<th>Licence</th>									
-									<th>Name</th>
-									<th>Dept.</th>
+									<th>Spanner<br/>Name</th>
+									<th>Spanner<br/>Code</th>
+									<th>Spanner<br/>Licence</th>									
+									<th>Spanner<br/>Deptartement</th>
 									<th></th>																
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
+									<td>Mohamed ElMansoury</td>
 									<td>65321</td>
 									<td>2425</td>									
-									<td>Mohamed ElMansoury</td>
 									<td>Engineering</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
 								<tr>
+									<td>Ahmed Samir</td>									
 									<td>82311</td>
 									<td>2930</td>									
-									<td>Ahmed Samir</td>
 									<td>H6000</td>
 									<td><a href="#">Detail</a></td>
 								</tr>
 								<tr>
+									<td>Yehia Kamel</td>
 									<td>25321</td>
 									<td>2152</td>									
-									<td>Yehia Kamel</td>
 									<td>H8000</td>									
 									<td><a href="#">Detail</a></td>
 								</tr>						
 								<tr>
+									<td>Hany Jamal</td>
 									<td>63123</td>
 									<td>2314</td>									
-									<td>Hany Jamal</td>
 									<td>T.S.</td>									
 									<td><a href="#">Detail</a></td>
 								</tr>															
@@ -781,10 +891,10 @@
 						</table>
 					</div>
 				</form>
-				<!-- End of form spannerdata-organizer-viewall -->				
-				<!-- Start of form spannerdata-organizer-detail -->
+				<!-- End form spannerdata-organizer-viewall -->				
+				<!-- Start form spannerdata-organizer-detail -->
 				<form method="GET" class="form form-spannerdata-organizer-detail">
-					<br/><label>Group: </label>
+					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>	
 					<br/><label>Spanner Code: </label>
 					<input type="text" class="input-text" readonly>
@@ -808,19 +918,29 @@
 					<input type="text" class="input-text" readonly>
 					<br/><label>Departement: </label>
 					<input type="text" class="input-text" readonly>
-					<br/><label>Qualification: </label>
-					<input type="text" class="input-text" readonly>
+					<fieldset>
+						<legend>Qualification:</legend>
+						<br/><label>Name: </label>
+						<input type="text" class="input-text" readonly>	
+						<br/><label>Degree: </label>
+						<input type="text" class="input-text" readonly>
+						<br/><label>Major: </label>
+						<input type="text" class="input-text" readonly>																		
+					</fieldset>								
 					<br/><label>Birthday: </label>
 					<input type="date" class="input-text" readonly>
 					<br/><label>Hire Date: </label>
-					<input type="date" class="input-text" readonly>																																		
+					<input type="date" class="input-text" readonly>
+					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
+					<label> Has a Car</label>																																									
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
 					<label> View Group Data</label>	
 					<br/><input type="submit" class="submit" value="Edit">
 				</form>
-				<!-- End of form spannerdata-organizer-detail -->
-				<!-- Start of form spannerdata-organizer-editadd -->
+				<!-- End form spannerdata-organizer-detail -->
+				<!-- Start form spannerdata-organizer-editadd -->
 				<form method="GET" class="form form-spannerdata-organizer-editadd">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
@@ -828,25 +948,17 @@
 						<option value="third">Third Group</option>
 					</select>
 					<br/><label>Spanner Code: </label>
-					<select>
-						<option value="">--Select Code--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
-					</select>
+					<input type="text" class="input-text">
 					<br/><label>Spanner Licence: </label>
-					<select>
-						<option value="">--Select Licence--</option>
-						<option value="first">65321</option> 
-						<option value="second" >25617</option>
-					</select>					
+					<input type="text" class="input-text">			
 					<br/><label>First Name: </label>
-					<input type="text" class="input-text">		
+					<input type="text" class="input-text">
 					<br/><label>Middle Name1: </label>
 					<input type="text" class="input-text">	
 					<br/><label>Middle Name2: </label>
 					<input type="text" class="input-text">
 					<br/><label>Last Name: </label>
-					<input type="text" class="input-text">																				
+					<input type="text" class="input-text">																	
 					<br/><label>Email: </label>
 					<input type="email" class="input-text">
 					<br/><label>Gender: </label>
@@ -866,16 +978,35 @@
 						<option value="second">H7000</option>
 						<option value="third">T.S.</option>						
 					</select>
-					<br/><label>Qualification: </label>
-					<select>
-						<option value="">--Select Qual.--</option>
-						<option value="first">Engineer</option> 
-						<option value="second">Technical</option>
-					</select>
+					<fieldset>
+						<legend>Qualification:</legend>
+						<br/><label>Name: </label>
+						<select>
+							<option value="">--Select Name--</option>
+							<option value="first">Engineer</option> 
+							<option value="second">Technician</option>
+						</select>
+						<br/><label>Degree: </label>
+						<select>
+							<option value="">--Select Degree--</option>
+							<option value="first">Associate</option> 
+							<option value="first">Bachelor</option> 
+							<option value="second">Master</option>
+							<option value="second">Doctoral</option>							
+						</select>
+						<br/><label>Major: </label>
+						<select>
+							<option value="">--Select Major--</option>
+							<option value="first">Mechanical</option> 
+							<option value="second">Electrical</option>
+						</select>											
+					</fieldset>								
 					<br/><label>Birthday: </label>
 					<input type="date" class="input-text">
 					<br/><label>Hire Date: </label>
-					<input type="date" class="input-text">																																		
+					<input type="date" class="input-text">
+					<br/><input type="checkbox" class="input-checkbox">
+					<label> Has a Car</label>																																								
 					<br/><input type="checkbox" class="input-checkbox">
 					<label> View Group Data</label>	
 					<br/><input type="submit" class="submit" value="Save">
@@ -883,6 +1014,7 @@
 				<!-- End of form spannerdata-organizer-editadd -->
 				<!-- Start of form spannerdata-organizer-search -->
 				<form method="GET" class="form form-spannerdata-organizer-search">
+					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
 						<option value="first">First Group</option> 
@@ -902,15 +1034,35 @@
 						<option value="second" >25617</option>
 					</select>					
 					<br/><label>First Name: </label>
-					<input type="text" class="input-text">		
+					<select>
+						<option value="">--Select First--</option>
+						<option value="first">Ahmed</option> 
+						<option value="second" >Mohamed</option>
+					</select>
 					<br/><label>Middle Name1: </label>
-					<input type="text" class="input-text">	
+					<select>
+						<option value="">--Select Middle1--</option>
+						<option value="first">Ali</option> 
+						<option value="second" >Hamed</option>
+					</select>
 					<br/><label>Middle Name2: </label>
-					<input type="text" class="input-text">
+					<select>
+						<option value="">--Select Middle2--</option>
+						<option value="first">Yousry</option> 
+						<option value="second" >Fahmy</option>
+					</select>
 					<br/><label>Last Name: </label>
-					<input type="text" class="input-text">																				
+					<select>
+						<option value="">--Select Last--</option>
+						<option value="first">ElMansory</option> 
+						<option value="second" >Oraby</option>
+					</select>
 					<br/><label>Email: </label>
-					<input type="email" class="input-text">
+					<select>
+						<option value="">--Select Email--</option>
+						<option value="first">abcdefg@yahoo.com</option> 
+						<option value="second" >mnbvcxz@yandex.com</option>
+					</select>
 					<br/><label>Gender: </label>
 					<select>
 						<option value="">--Select Gender--</option>
@@ -918,9 +1070,17 @@
 						<option value="second" >Female</option>
 					</select>	
 					<br/><label>Mobile1: </label>
-					<input type="text" class="input-text">
+					<select>
+						<option value="">--Select Mobile1--</option>
+						<option value="first">01112345678</option> 
+						<option value="second" >01002345678</option>
+					</select>
 					<br/><label>Mobile2: </label>
-					<input type="text" class="input-text">
+					<select>
+						<option value="">--Select Mobile2--</option>
+						<option value="first">01124563986</option> 
+						<option value="second" >01001368246</option>
+					</select>
 					<br/><label>Departement: </label>
 					<select>
 						<option value="">--Select Dept.--</option>
@@ -928,25 +1088,342 @@
 						<option value="second">H7000</option>
 						<option value="third">T.S.</option>						
 					</select>
-					<br/><label>Qualification: </label>
-					<select>
-						<option value="">--Select Qual.--</option>
-						<option value="first">Engineer</option> 
-						<option value="second">Technical</option>
-					</select>
+					<fieldset>
+						<legend>Qualification:</legend>
+						<br/><label>Name: </label>
+						<select>
+							<option value="">--Select Name--</option>
+							<option value="first">Engineer</option> 
+							<option value="second">Technician</option>
+						</select>
+						<br/><label>Degree: </label>
+						<select>
+							<option value="">--Select Degree--</option>
+							<option value="first">Associate</option> 
+							<option value="first">Bachelor</option> 
+							<option value="second">Master</option>
+							<option value="second">Doctoral</option>							
+						</select>
+						<br/><label>Major: </label>
+						<select>
+							<option value="">--Select Major--</option>
+							<option value="first">Mechanical</option> 
+							<option value="second">Electrical</option>
+						</select>											
+					</fieldset>							
 					<br/><label>Birthday: </label>
-					<input type="text" class="input-text text-fromto">
+					<input type="date" class="input-text text-fromto">
 					<label class="label-fromto"> To </label>
-					<input type="text" class="input-text text-fromto">
+					<input type="date" class="input-text text-fromto">
 					<br/><label>Hire Date: </label>
-					<input type="text" class="input-text text-fromto">
+					<input type="date" class="input-text text-fromto">
 					<label class="label-fromto"> To </label>
-					<input type="text" class="input-text text-fromto">		
+					<input type="date" class="input-text text-fromto">
+					<br/><input type="checkbox" class="input-checkbox">
+					<label> Has a Car</label>					
 					<br/><input type="checkbox" class="input-checkbox">
 					<label> View Group Data</label>	
 					<br/><input type="submit" class="submit" value="Save">
 				</form>
 				<!-- End of form spannerdata-organizer-search -->
+				<!-- Start of form approvals-organizer-viewall -->
+				<form method="GET" class="form form-approvals-organizer-viewall">
+					<br/><label>Group Name: </label>
+					<select>
+						<option value="">--Select Group--</option>
+						<option value="first">First Group</option>
+						<option value="second" >Second Group</option>
+						<option value="third">Third Group</option>
+					</select>
+					<div class="table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Spanner<br/>Name</th>
+									<th>Spanner<br/>Code</th>
+									<th>Aircraft<br/>Model</th>										
+									<th>Engine<br/>Model</th>
+									<th></th>																
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Mohamed ElMansoury</td>
+									<td>65321</td>
+									<td>A320</td>
+									<td>V2500</td>
+									<td><a href="#">Detail</a></td>
+								</tr>
+								<tr>
+									<td>Mohamed ElMansoury</td>
+									<td>65321</td>
+									<td>A320</td>
+									<td>CFM</td>
+									<td><a href="#">Detail</a></td>
+								</tr>
+								<tr>
+									<td>Yehia Kamel</td>
+									<td>25321</td>
+									<td>A330</td>
+									<td>Trent</td>									
+									<td><a href="#">Detail</a></td>
+								</tr>						
+								<tr>
+									<td>Hany Jamal</td>
+									<td>63123</td>
+									<td>B737-800</td>
+									<td>CFM</td>									
+									<td><a href="#">Detail</a></td>
+								</tr>															
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="5">
+										<div class="pagination">
+											<a href="#">&laquo;</a>
+											<a href="#">❮</a>
+											<a href="#">1</a>
+											<a class="active" href="#">2</a>
+											<a href="#">3</a>
+											<a href="#">4</a>
+											<a href="#">5</a>
+											<a href="#">6</a>						
+											<a href="#">❯</a>
+											<a href="#">&raquo;</a>
+										</div>	
+									</td>
+								</tr>							
+							</tfoot>
+						</table>
+					</div>
+				</form>
+				<!-- End of form approvals-organizer-viewall -->
+				<!-- Start of form approvals-organizer-detail -->
+				<form method="GET" class="form form-approvals-organizer-detail">
+					<br/><label>Group Name: </label>
+					<input type="text" class="input-text" readonly>
+					<fieldset>
+						<legend>Spanner Information:</legend>
+						<br/><label>Spanner Code: </label>
+						<input type="text" class="input-text" readonly>	
+						<br/><label>Spanner Licence: </label>
+						<input type="text" class="input-text" readonly>					
+						<br/><label>Spanner Name: </label>
+						<input type="text" class="input-text" readonly>
+					</fieldset>
+					<br/><label>Approval Rating: </label>
+					<input type="text" class="input-text" readonly>
+					<br/><label>Approval Category: </label>
+					<input type="text" class="input-text" readonly>
+					<fieldset>
+						<legend>Aircraft Type:</legend>					
+						<br/><label>Aircraft Model: </label>
+						<input type="text" class="input-text" readonly>	
+						<br/><label>Engine Model: </label>
+						<input type="text" class="input-text" readonly>
+					</fieldset>
+					<br/><input type="submit" class="submit" value="Edit">
+				</form>
+				<!-- End of form approvals-organizer-detail -->
+				<!-- Start of form approvals-organizer-editadd -->
+				<form method="GET" class="form form-approvals-organizer-editadd">
+					<br/><label>Group Name: </label>
+					<select>
+						<option value="">--Select Group--</option>
+						<option value="first">First Group</option> 
+						<option value="second" >Second Group</option>
+						<option value="third">Third Group</option>
+					</select>
+					<br/><label>Spanner Information: </label>
+					<select>
+						<option value="">--Select Information--</option>
+						<option value="first">Ahmed Ragaee, 65321, 2329</option> 
+						<option value="second" >Saleh Mohamed, 25617, 2734</option>
+					</select>
+					<br/><label>Spaner Rating: </label>
+					<select>
+						<option value="">--Select Rating--</option>
+						<option value="first">Airframe</option>
+						<option value="second" >Engine</option>
+						<option value="first">Airframe & Engine</option>
+						<option value="second" >Elec</option>
+						<option value="second" >Avionics</option>
+						<option value="second" >Muli-X</option>
+					</select>
+					<br/><label>Spanner Category: </label>
+					<select>
+						<option value="">--Select Category--</option>
+						<option value="first">B1</option>
+						<option value="second" >B2</option>
+					</select>
+					<fieldset>
+						<legend>Aircraft Type:</legend>
+						<br/><label>Aircraft Model: </label>
+						<select>
+							<option value="">--Select Aircraft--</option>
+							<option value="first">A320</option> 
+							<option value="second" >A330</option>
+						</select>
+						<br/><label>Engine Model: </label>
+						<select>
+							<option value="">--Select Engine--</option>
+							<option value="first">CFM</option> 
+							<option value="second" >Trent</option>
+						</select>						
+					</fieldset>
+					<br/><input type="submit" class="submit" value="Save">
+				</form>
+				<!-- End of form approvals-organizer-editadd -->	
+				<!-- Start of form approvals-organizer-search -->
+				<form method="GET" class="form form-approvals-organizer-search">
+						<br/><label>Group Name: </label>
+						<select>
+							<option value="">--Select Group--</option>
+							<option value="first">First Group</option> 
+							<option value="second" >Second Group</option>
+							<option value="third">Third Group</option>
+						</select>
+						<fieldset>
+							<legend>Spanner Information:</legend>
+							<br/><label>Spanner Code: </label>
+							<select>
+								<option value="">--Select Code--</option>
+								<option value="first">65321</option> 
+								<option value="second" >25617</option>
+							</select>
+							<br/><label>Spanner Licence: </label>
+							<select>
+								<option value="">--Select Licence--</option>
+								<option value="first">2329</option> 
+								<option value="second" >2734</option>
+							</select>						
+							<br/><label>Spanner Name: </label>
+							<select>
+								<option value="">--Select Name--</option>
+								<option value="first">Ahmed Ragaee</option> 
+								<option value="second" >Saleh Mohamed</option>
+							</select>												
+						</fieldset>
+						<br/><label>Spanner Rating: </label>
+						<select>
+							<option value="">--Select Rating--</option>
+							<option value="first">Airframe</option>
+							<option value="second" >Engine</option>
+							<option value="first">Airframe & Engine</option>
+							<option value="second" >Elec</option>
+							<option value="second" >Avionics</option>
+							<option value="second" >Muli-X</option>
+						</select>
+						<br/><label>Spanner Category: </label>
+						<select>
+							<option value="">--Select Category--</option>
+							<option value="first">B1</option>
+							<option value="second" >B2</option>
+						</select>
+						<fieldset>
+							<legend>Aircraft Type:</legend>
+							<br/><label>Aircraft Model: </label>
+							<select>
+								<option value="">--Select Aircraft--</option>
+								<option value="first">A320</option> 
+								<option value="second" >A330</option>
+							</select>
+							<br/><label>Engine Model: </label>
+							<select>
+								<option value="">--Select Engine--</option>
+								<option value="first">CFM</option> 
+								<option value="second" >Trent</option>
+							</select>						
+						</fieldset>
+						<br/><input type="submit" class="submit" value="Search">
+					</form>
+					<!-- End of form approvals-organizer-search -->					
+				<!-- Start of form groupdata-organizer-viewall -->
+				<form method="GET" class="form form-groupdata-organizer-viewall">
+					<div class="table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Group<br/>Name</th>
+									<th>Reord<br/>Starting</th>									
+									<th>Sector<br/>Time</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Production</td>
+									<td>01/01/2018</td>									
+									<td>false</td>
+									<td><a href="#">Edit</a></td>
+								</tr>
+								<tr>
+									<td>PCC</td>
+									<td>01/01/2017</td>									
+									<td>false</td>
+									<td><a href="#">Edit</a></td>
+								</tr>
+								<tr>
+									<td>Planing</td>
+									<td>01/01/2019</td>									
+									<td>false</td>
+									<td><a href="#">Edit</a></td>
+								</tr>						
+								<tr>
+									<td>Engineering</td>
+									<td>30/06/2017</td>									
+									<td>true</td>
+									<td><a href="#">Edit</a></td>
+								</tr>															
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="4">
+										<div class="pagination">
+											<a href="#">&laquo;</a>
+											<a href="#">❮</a>
+											<a class="active" href="#">1</a>
+											<a href="#">2</a>
+											<a href="#">3</a>
+											<a href="#">❯</a>
+											<a href="#">&raquo;</a>
+										</div>	
+									</td>
+								</tr>							
+							</tfoot>
+						</table>
+					</div>
+				</form>
+				<!-- End form groupdata-organizer-viewall -->
+				<!-- Start of form groupdata-organizer-editadd -->
+				<form method="GET" class="form form-groupdata-organizer-editadd">
+					<br/><label>Group Name: </label>
+					<input type="text" class="input-text">
+					<br/><label>Record Starting: </label>
+					<input type="date" class="input-text">
+					<br/><input type="checkbox" class="input-checkbox">
+					<label> Calculation based on Sector Time</label>
+					<br/><input type="submit" class="submit" value="Save">
+				</form>
+				<!-- End of form groupdata-organizer-editadd -->
+				<!-- Start of form groupdata-organizer-search -->
+				<form method="GET" class="form form-groupdata-organizer-search">
+					<br/><label>Group Name: </label>
+					<select>
+						<option value="">--Select Group--</option>
+						<option value="first">Production</option> 
+						<option value="second" >PCC</option>
+						<option value="second" >Engineering</option>
+					</select>
+					<br/><label>Record Starting: </label>
+					<input type="date" class="input-text text-fromto">
+					<label class="label-fromto"> To </label>
+					<input type="date" class="input-text text-fromto">
+					<br/><input type="checkbox" class="input-checkbox">
+					<label> Calculation based on Sector Time</label>
+					<br/><input type="submit" class="submit" value="Search">
+				</form>
+				<!-- End of form groupdata-organizer-search -->										
 				<!-- Start of form organizerdata-organizer-detail -->
 				<form method="GET" class="form form-organizerdata-organizer-detail">
 					<br/><label>Organizer Groups: </label>

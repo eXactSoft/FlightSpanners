@@ -270,7 +270,7 @@ main .main-container .form select:focus-within{
 }
 .input-checkbox{
 	vertical-align: middle;
-	margin-bottom: 0px;
+	margin-bottom: 7px;
 }
 main .main-container .form .submit{
 	background: #F05323;
@@ -297,6 +297,9 @@ main .main-container .form a{
 	color: #1AAEBA;
 	letter-spacing: 0;
 	line-height: 17px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 5px
 }
 main .main-container .form a:hover{
 	text-decoration: underline
@@ -304,7 +307,7 @@ main .main-container .form a:hover{
 main .main-container .form label{
 	display: inline-block;
 	vertical-align: middle;
-	margin-bottom: 0;
+	margin-bottom: 5px;
 	width: 110px;
 	font-size: 14px;
 	line-height: 24px;
@@ -386,6 +389,25 @@ main .main-container .form table th{
 	background-color: #00BFFF;
 	color: #fff
 }
+main .main-container .form fieldset { 
+	border: 1px solid silver;
+	padding: 15px;
+	padding-bottom: 25px;
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: 14px;
+	color: #58595B;
+	width: 83%;
+}
+main .main-container .form-flightrecords-organizer-search fieldset{
+	width:100%
+}
+main .main-container .form fieldset label{
+	width: 75px;
+}
+main .main-container .form-flightrecords-organizer-search fieldset label[class="label-fromto"]{
+	width: 15px;
+}
 /******** Responsive layout - Browser 550px or less ********/ 
 @media only screen and (max-width: 550px){
 	/* At width < 550px the label will be on the top of the textbox & select */
@@ -393,16 +415,11 @@ main .main-container .form table th{
 		width: 300px;
 		/*margin: 0 auto !important;*/
 	}
-	/* for form-flightrecords-organizer-viewall & main .main-container .form-flightsummary-organizer-viewall only*/
-	/*main .main-container .form-flightrecords-organizer-viewall,
-	main .main-container 	.form-flightsummary-organizer-viewall{
-		width: 95%;
-	}*/
 	/*:not(.form-flightrecords-organizer-viewall)
 	:not(.form-flightsummary-organizer-viewall)
 	:not(.form-inactivedays-organizer-viewall)
 	:not(.form-spannerdata-organizer-viewall)*/
-	main .main-container .form .submit{
+		main .main-container .form .submit{
 		width: 100%;
 		max-width: 300px;
 	}
@@ -410,7 +427,12 @@ main .main-container .form table th{
 	main .main-container .form select{
 		margin-top: 0; /* As its label will be on the top of it instead of left of it*/
 	}
-	main .main-container .form label{
+	main .main-container .form label:not(:last-of-type),
+	main .main-container .form-flightrecords-organizer-detail fieldset label:last-of-type,
+	main .main-container .form-flightrecords-organizer-editadd fieldset label:last-of-type,
+	main .main-container .form-flightrecords-organizer-editadd label:last-of-type,
+	main .main-container .form-inactivedays-organizer-editadd label:last-of-type,
+	main .main-container .form-organizerdata-organizer-detail label:last-of-type{
 		display: block;
 		margin-bottom: 0;
 	}
@@ -420,7 +442,11 @@ main .main-container .form table th{
 	}	
 	main .main-container .form-signin label:nth-last-child(2),
 	/* Select each label that preceded by an <input> element with type="checkbox" */
-	main .main-container form input[type="checkbox"] ~ label {
+	main .main-container form input[type="checkbox"] ~ label:first-of-type,
+	main .main-container form input[type="checkbox"] ~ label:nth-of-type(2),
+	main .main-container .form-spannerdata-organizer-detail label:nth-last-of-type(2),
+	main .main-container .form-spannerdata-organizer-editadd label:nth-last-of-type(2),
+	main .main-container .form-spannerdata-organizer-search label:nth-last-of-type(2){
 		display: inline-block;
 	}
 	main .main-container .form .text-fromto{
@@ -433,7 +459,15 @@ main .main-container .form table th{
 		margin-bottom: 15px;
 		width: 5%;
 		vertical-align: middle
-	}	
+	}
+	main .main-container .form fieldset { 
+		width: 100%;
+	}
+	main .main-container .form fieldset .input-checkbox,
+	main .main-container .form fieldset label:first-of-type,
+	main .main-container .form fieldset label:nth-of-type(2){
+		margin-bottom: 10px;
+	}
 }
 /* End form general settings */
 /* Start form specific settings*/
@@ -455,12 +489,14 @@ main .main-container .form-forgot-unregistered .input-text{
 main .main-container .form-forgot-unregistered label:last-of-type{
 	text-align: left;
 	vertical-align: middle;
+	margin-bottom: 15px;
 }
 main .main-container .form-forgot-unregistered label:first-of-type{
 	color: #FF0000;
 	font-size: 17px;
 	display: block;
-	width: 200px
+	width: 200px;
+	margin-bottom: 15px;
 }
 main .main-container .form-forgot-unregistered .input-text:focus{
 	border-color: #C8CBCF /* Don't change the border as the text box is read only */
@@ -470,7 +506,8 @@ main .main-container .form-forgot-unregistered .input-text:focus{
 main .main-container .form-flightrecords-organizer-viewall,
 main .main-container .form-flightsummary-organizer-viewall,
 main .main-container .form-inactivedays-organizer-viewall,
-main .main-container .form-spannerdata-organizer-viewall{
+main .main-container .form-spannerdata-organizer-viewall,
+main .main-container .form-groupdata-organizer-viewall{
 	width: 97%;
 	max-width: 535px;
 }
@@ -497,7 +534,7 @@ main .main-container .form-organizerdata-organizer-detail .input-text:nth-child(
 
 /* Start form-organizerdata-organizer-detail */
 main .main-container .form-organizerdata-organizer-detail select{
-	height: 40px
+	height: 55px
 }
 /* End form-organizerdata-organizer-detail */
 /* End form specific settings*/
