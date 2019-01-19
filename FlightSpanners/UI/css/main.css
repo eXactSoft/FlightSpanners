@@ -20,7 +20,7 @@ body {
 header{
 	width:100%;
 	border-bottom: 1px solid #f05323;
-	padding-right: 10px /*This give a space to the right icon */
+	padding-right: 5px /*This give a space to the right icon */
 }
 header .icon-left{
 	float: left;
@@ -232,12 +232,12 @@ nav > .menu-container > .ul-main > li:hover > span::before{
 
 /* Start main */
 main .main-container{
-	margin: 20px 10px 0px 10px;
+	margin: 10px 10px 0px 10px;
 	/*width: calc(100%-10px); */
 }
 /* Start form styles */
 main .main-container .form{
-	margin: 10px 0 0 10px;
+	margin: 0 0 0 10px;
 	font-family: 'Carrois Gothic', sans-serif;	
 	width: 600px;
 }
@@ -248,6 +248,17 @@ main .main-container .form[class$="-viewall"] {
 }
 /* End form exceptions */
 /* End form styles */
+
+/* Start form h2 style */
+main .main-container .form h2{
+	font-family: 'Encode Sans Condensed', 'sans-serif';
+	font-weight: 700;
+	color: #DC143C;
+	text-decoration-line: underline;
+	margin-top: 20px
+}
+/* End form h2 style */
+
 /* Start form controls styles */
 main .main-container .form .input-text,
 main .main-container .form select{
@@ -288,7 +299,7 @@ main .main-container .form-organizerdata-organizer-detail select{
 	height: 55px
 }
 /* End select exceptons */
-.input-checkbox{
+main .main-container .form .input-checkbox{
 	vertical-align: middle;
 	margin-top: 13px;
 }

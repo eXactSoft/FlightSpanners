@@ -155,6 +155,7 @@
 			<div class="main-container">
 				<!-- Start of form signin -->										
 				<form method="POST" class="form form-signin">
+					<h2> Signin Form </h2>
 					<br/><input type="text" class="input-text" placeholder="Code">
 					<br/><input type="password" class="input-text" placeholder="Password">
 					<br/><a href="#">Forgot Password?</a>
@@ -164,6 +165,7 @@
 				<!-- End of form signin -->
 				<!-- Start of form change-password -->
 				<form method="POST" class="form form-changepassword">
+					<h2> Change Password Form </h2>					
 					<br/><input type="password" class="input-text" placeholder="Old Password">
 					<br/><input type="password" class="input-text" placeholder="New Password">
 					<br/><input type="password" class="input-text" placeholder="Confirm New Password">
@@ -172,6 +174,7 @@
 				<!-- End of form change-password -->
 				<!-- Start of form forgot -->
 				<form method="GET" class="form form-forgot-unregistered">
+					<h2> Forgot Password Form </h2>
 					<br/><label>Forgot Password</label>
 					<br/><label>Call Administrator at: </label>
 					<input type="text" class="input-text" readonly >
@@ -179,6 +182,7 @@
 				<!-- End of form forgot -->
 				<!-- Start of form unregistered  -->
 				<form method="GET" class="form form-forgot-unregistered">
+					<h2> Unregistered Password Form </h2>
 					<br/><label>Unregistered User</label>
 					<br/><label>Call Administrator at: </label>
 					<input type="text" class="input-text" readonly >
@@ -186,6 +190,7 @@
 				<!-- End of form unregistered  -->
 				<!-- Start of form flightrecords-organizer-viewall &lang;&lt;&lsaquo;-->
 				<form method="GET" class="form form-flightrecords-organizer-viewall">
+					<h2> FlightRecords Organizer ViewAll Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -259,6 +264,7 @@
 				<!-- End form flightrecords-organizer-viewall -->
 				<!-- Start form flightrecords-organizer-detail -->
 				<form method="GET" class="form form-flightrecords-organizer-detail">
+					<h2> FlightRecords Organizer Detail Form </h2>
 					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>
 					<br/><label>Record Date: </label>
@@ -280,12 +286,14 @@
 					<input type="text" class="input-text" readonly>
 					<br/><label>Approval Detail: </label>
 					<input type="text" class="input-text" readonly>	
-					<br/><label>Destination Type: </label>
+					<br/><label>Flight Company: </label>
+					<input type="text" class="input-text" readonly>						
+					<br/><label>Origin Type: </label>
 					<input type="text" class="input-text" readonly>	
 					<br/><label>Eligibility Type: </label>
 					<input type="text" class="input-text" readonly>
-					<br/><label>Flight Company: </label>
-					<input type="text" class="input-text" readonly>	
+					<br/><label>Destination Type: </label>
+					<input type="text" class="input-text" readonly>						
 					<br/><input type="checkbox" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
 					<label class="label-endofcheckbox"> Setteled Record</label>	
 					<br/><input type="submit" class="submit" value="Edit">
@@ -293,6 +301,7 @@
 				<!-- End form flightrecords-organizer-detail -->
 				<!-- Start form flightrecords-organizer-editadd -->
 				<form method="GET" class="form form-flightrecords-organizer-editadd">
+					<h2> FlightRecords Organizer EditAdd Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -329,29 +338,37 @@
 						<option value="first">Mohamed Ali, 25316, A&C, B1</option> 
 						<option value="second" >Alaa Ahmed, 83565, Elec, B2</option>
 					</select>
-					<br/><label>Destination Type: </label>
-					<select>
-						<option value="">--Select Type--</option>
-						<option value="first">Single</option> 
-						<option value="second" >Multiple</option>
-					</select>
-					<br/><label>Eligibility Type: </label>
-					<select>
-						<option value="">--Select Type--</option>
-						<option value="first">Normal</option> 
-						<option value="second" >Apology</option>
-					</select>
 					<br/><label>Flight Company: </label>
 					<select>
 						<option value="">--Select Company--</option>
 						<option value="first">EgyptAir</option> 
 						<option value="second" >AirCairo</option>
+					</select>					
+					<br/><label>Origin Type: </label>
+					<select>
+						<option value="">--Select Type--</option>
+						<option value="first">StayCity</option> 
+						<option value="second" >DistantCity</option>
+					</select>
+					<br/><label>Eligibility Type: </label>
+					<select>
+						<option value="">--Select Type--</option>
+						<option value="first">Normal</option> 
+						<option value="second" >Bonus</option>
+						<option value="second" >Apology</option>
+					</select>
+					<br/><label>Destination Type: </label>
+					<select>
+						<option value="">--Select Type--</option>
+						<option value="first">Direct</option> 
+						<option value="second" >Multiple</option>
 					</select>
 					<br/><input type="submit" class="submit" value="Save">
 				</form>
 				<!-- End of form flightrecords-organizer-editadd -->		
 				<!-- Start of form flightrecords-organizer-search -->
 				<form method="GET" class="form form-flightrecords-organizer-search">
+					<h2> FlightRecords Organizer Search Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -376,7 +393,7 @@
 						<br/><input type="checkbox" class="input-checkbox">						
 						<label class="label-endofcheckbox"> Local Flight</label>
 						<input type="checkbox" class="input-checkbox">
-						<label class="label-endofcheckbox"> Cargo Flightt</label>						
+						<label class="label-endofcheckbox"> Cargo Flight</label>						
 						<br/><label>Flt Sector: </label>
 						<input type="time" class="input-text text-fromto">
 						<label class="label-fromto"> To </label>
@@ -449,25 +466,32 @@
 							<option value="first">B1</option>
 							<option value="second" >B2</option>
 						</select>
-					</fieldset>						
-					<br/><label>Destination Type: </label>
-					<select>
-						<option value="">--Select Type--</option>
-						<option value="first">Single</option> 
-						<option value="second" >Multiple</option>
-					</select>
-					<br/><label>Eligibility Type: </label>
-					<select>
-						<option value="">--Select Type--</option>
-						<option value="first">Normal</option> 
-						<option value="second" >Apology</option>
-					</select>
+					</fieldset>	
 					<br/><label>Flight Company: </label>
 					<select>
 						<option value="">--Select Company--</option>
 						<option value="first">EgyptAir</option> 
 						<option value="second" >AirCairo</option>
+					</select>					
+					<br/><label>Origin Type: </label>
+					<select>
+						<option value="">--Select Type--</option>
+						<option value="first">StayCity</option> 
+						<option value="second" >DistantCity</option>
+					</select>										
+					<br/><label>Eligibility Type: </label>
+					<select>
+						<option value="">--Select Type--</option>
+						<option value="first">Normal</option> 
+						<option value="second" >Bonus</option>
+						<option value="second" >Apology</option>
 					</select>
+					<br/><label>Destination Type: </label>
+					<select>
+						<option value="">--Select Type--</option>
+						<option value="first">Direct</option> 
+						<option value="second" >Multiple</option>
+					</select>					
 					<br/><input type="checkbox" class="input-checkbox">
 					<label class="label-endofcheckbox"> Setteled Record</label>	
 					<br/><input type="submit" class="submit" value="Search">
@@ -475,6 +499,7 @@
 				<!-- End of form flightrecords-organizer-search -->
 				<!-- Start of form flightsummary-organizer-viewall -->
 				<form method="GET" class="form form-flightsummary-organizer-viewall">
+					<h2> FlightSummary Organizer ViewAll Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -547,6 +572,7 @@
 				<!-- End of form flightsummary-organizer-viewall -->
 				<!-- Start of form flightsummary-organizer-detail -->
 				<form method="GET" class="form form-flightsummary-organizer-detail">
+					<h2> FlightSummary Organizer ViewAll Detail </h2>
 					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>	
 					<fieldset>
@@ -584,6 +610,7 @@
 				<!-- End of form flightsummary-organizer-detail -->
 				<!-- Start of form flightsummary-organizer-search -->
 				<form method="GET" class="form form-flightsummary-organizer-search">
+					<h2> FlightSummary Organizer Search Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -659,6 +686,7 @@
 				<!-- End of form flightsummary-organizer-search -->
 				<!-- Start of form inactivedays-organizer-viewall -->
 				<form method="GET" class="form form-inactivedays-organizer-viewall">
+					<h2> InactiveDays Organizer ViewAll Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -731,6 +759,7 @@
 				<!-- End of form inactivedays-organizer-viewall -->
 				<!-- Start of form inactivedays-organizer-detail -->
 				<form method="GET" class="form form-inactivedays-organizer-detail">
+					<h2> InactiveDays Organizer Detail Form </h2>
 					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>
 					<fieldset>
@@ -755,6 +784,7 @@
 				<!-- End of form inactivedays-organizer-detail -->
 				<!-- Start of form inactivedays-organizer-editadd -->
 				<form method="GET" class="form form-inactivedays-organizer-editadd">
+					<h2> InactiveDays Organizer EditAdd Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -777,6 +807,7 @@
 				<!-- End of form inactivedays-organizer-editadd -->
 				<!-- Start of form inactivedays-organizer-search -->
 				<form method="GET" class="form form-inactivedays-organizer-search">
+					<h2> InactiveDays Organizer Search Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -822,6 +853,7 @@
 				<!-- End of form inactivedays-organizer-search -->
 				<!-- Start of form spannerdata-organizer-viewall -->
 				<form method="GET" class="form form-spannerdata-organizer-viewall">
+					<h2> SpannerData Organizer ViewAll Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -894,6 +926,7 @@
 				<!-- End form spannerdata-organizer-viewall -->				
 				<!-- Start form spannerdata-organizer-detail -->
 				<form method="GET" class="form form-spannerdata-organizer-detail">
+					<h2> SpannerData Organizer Detail Form </h2>
 					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>	
 					<br/><label>Spanner Code: </label>
@@ -940,6 +973,7 @@
 				<!-- End form spannerdata-organizer-detail -->
 				<!-- Start form spannerdata-organizer-editadd -->
 				<form method="GET" class="form form-spannerdata-organizer-editadd">
+					<h2> SpannerData Organizer EditAdd Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -1014,6 +1048,7 @@
 				<!-- End of form spannerdata-organizer-editadd -->
 				<!-- Start of form spannerdata-organizer-search -->
 				<form method="GET" class="form form-spannerdata-organizer-search">
+					<h2> SpannerData Organizer Search Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -1128,6 +1163,7 @@
 				<!-- End of form spannerdata-organizer-search -->
 				<!-- Start of form approvals-organizer-viewall -->
 				<form method="GET" class="form form-approvals-organizer-viewall">
+					<h2> Approvals Organizer ViewAll Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -1200,6 +1236,7 @@
 				<!-- End of form approvals-organizer-viewall -->
 				<!-- Start of form approvals-organizer-detail -->
 				<form method="GET" class="form form-approvals-organizer-detail">
+					<h2> Approvals Organizer Detail Form </h2>
 					<br/><label>Group Name: </label>
 					<input type="text" class="input-text" readonly>
 					<fieldset>
@@ -1227,6 +1264,7 @@
 				<!-- End of form approvals-organizer-detail -->
 				<!-- Start of form approvals-organizer-editadd -->
 				<form method="GET" class="form form-approvals-organizer-editadd">
+					<h2> Approvals Organizer EditAdd Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -1276,70 +1314,72 @@
 				<!-- End of form approvals-organizer-editadd -->	
 				<!-- Start of form approvals-organizer-search -->
 				<form method="GET" class="form form-approvals-organizer-search">
-						<br/><label>Group Name: </label>
+					<h2> Approvals Organizer Search Form </h2>
+					<br/><label>Group Name: </label>
+					<select>
+						<option value="">--Select Group--</option>
+						<option value="first">First Group</option> 
+						<option value="second" >Second Group</option>
+						<option value="third">Third Group</option>
+					</select>
+					<fieldset>
+						<legend>Spanner Information:</legend>
+						<br/><label>Code: </label>
 						<select>
-							<option value="">--Select Group--</option>
-							<option value="first">First Group</option> 
-							<option value="second" >Second Group</option>
-							<option value="third">Third Group</option>
+							<option value="">--Select Code--</option>
+							<option value="first">65321</option> 
+							<option value="second" >25617</option>
 						</select>
-						<fieldset>
-							<legend>Spanner Information:</legend>
-							<br/><label>Code: </label>
-							<select>
-								<option value="">--Select Code--</option>
-								<option value="first">65321</option> 
-								<option value="second" >25617</option>
-							</select>
-							<br/><label>Licence: </label>
-							<select>
-								<option value="">--Select Licence--</option>
-								<option value="first">2329</option> 
-								<option value="second" >2734</option>
-							</select>						
-							<br/><label>Name: </label>
-							<select>
-								<option value="">--Select Name--</option>
-								<option value="first">Ahmed Ragaee</option> 
-								<option value="second" >Saleh Mohamed</option>
-							</select>												
-						</fieldset>
-						<br/><label>Aproval Rating: </label>
+						<br/><label>Licence: </label>
 						<select>
-							<option value="">--Select Rating--</option>
-							<option value="first">Airframe</option>
-							<option value="second" >Engine</option>
-							<option value="first">Airframe & Engine</option>
-							<option value="second" >Elec</option>
-							<option value="second" >Avionics</option>
-							<option value="second" >Muli-X</option>
-						</select>
-						<br/><label>Aproval Category: </label>
+							<option value="">--Select Licence--</option>
+							<option value="first">2329</option> 
+							<option value="second" >2734</option>
+						</select>						
+						<br/><label>Name: </label>
 						<select>
-							<option value="">--Select Category--</option>
-							<option value="first">B1</option>
-							<option value="second" >B2</option>
+							<option value="">--Select Name--</option>
+							<option value="first">Ahmed Ragaee</option> 
+							<option value="second" >Saleh Mohamed</option>
+						</select>												
+					</fieldset>
+					<br/><label>Aproval Rating: </label>
+					<select>
+						<option value="">--Select Rating--</option>
+						<option value="first">Airframe</option>
+						<option value="second" >Engine</option>
+						<option value="first">Airframe & Engine</option>
+						<option value="second" >Elec</option>
+						<option value="second" >Avionics</option>
+						<option value="second" >Muli-X</option>
+					</select>
+					<br/><label>Aproval Category: </label>
+					<select>
+						<option value="">--Select Category--</option>
+						<option value="first">B1</option>
+						<option value="second" >B2</option>
+					</select>
+					<fieldset>
+						<legend>Aircraft Type:</legend>
+						<br/><label>A/C Model: </label>
+						<select>
+							<option value="">--Select Aircraft--</option>
+							<option value="first">A320</option> 
+							<option value="second" >A330</option>
 						</select>
-						<fieldset>
-							<legend>Aircraft Type:</legend>
-							<br/><label>A/C Model: </label>
-							<select>
-								<option value="">--Select Aircraft--</option>
-								<option value="first">A320</option> 
-								<option value="second" >A330</option>
-							</select>
-							<br/><label>Eng. Model: </label>
-							<select>
-								<option value="">--Select Engine--</option>
-								<option value="first">CFM</option> 
-								<option value="second" >Trent</option>
-							</select>						
-						</fieldset>
-						<br/><input type="submit" class="submit" value="Search">
-					</form>
-					<!-- End of form approvals-organizer-search -->					
+						<br/><label>Eng. Model: </label>
+						<select>
+							<option value="">--Select Engine--</option>
+							<option value="first">CFM</option> 
+							<option value="second" >Trent</option>
+						</select>						
+					</fieldset>
+					<br/><input type="submit" class="submit" value="Search">
+				</form>
+				<!-- End of form approvals-organizer-search -->					
 				<!-- Start of form groupdata-organizer-viewall -->
 				<form method="GET" class="form form-groupdata-organizer-viewall">
+					<h2> GroupData Organizer ViewAll Form </h2>
 					<div class="table-container">
 						<table>
 							<thead>
@@ -1397,6 +1437,7 @@
 				<!-- End form groupdata-organizer-viewall -->
 				<!-- Start of form groupdata-organizer-editadd -->
 				<form method="GET" class="form form-groupdata-organizer-editadd">
+					<h2> GroupData Organizer EditAdd Form </h2>
 					<br/><label>Group Name: </label>
 					<input type="text" class="input-text">
 					<br/><label>Record Starting: </label>
@@ -1408,6 +1449,7 @@
 				<!-- End of form groupdata-organizer-editadd -->
 				<!-- Start of form groupdata-organizer-search -->
 				<form method="GET" class="form form-groupdata-organizer-search">
+					<h2> GroupData Organizer Search Form </h2>
 					<br/><label>Group Name: </label>
 					<select>
 						<option value="">--Select Group--</option>
@@ -1426,6 +1468,7 @@
 				<!-- End of form groupdata-organizer-search -->										
 				<!-- Start of form organizerdata-organizer-detail -->
 				<form method="GET" class="form form-organizerdata-organizer-detail">
+					<h2> OrganizerData Organizer Detail Form </h2>
 					<br/><label>Organizer Groups: </label>
 					<!-- Readonly listbox selection-->
 					<select multiple="multiple" onchange="this.selectedIndex = -1" onfocus="this.blur()"><!-- This requires JS enabled-->
@@ -1454,12 +1497,15 @@
 					<br/><label>Occupation: </label>
 					<input type="text" class="input-text" readonly>
 				</form>
-				<!-- End of form organizerdata-organizer-detail -->									
+				<!-- End of form organizerdata-organizer-detail -->	
+
+				<!--								
 				<h2>Title Title </h2>
 				<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
 				</p>
-				<!-- Start of the signin-form -->		
+				 -->
+				 
 			</div>
 			<!-- End main-container class -->
     </main>
