@@ -1,0 +1,32 @@
+﻿@model FlightSpanners.Areas.OrganizerArea.ViewModels.OrganizerDataViewModel
+
+@{
+	ViewBag.Title = "Personal Data";
+}
+<!-- Start of form Organizer Data Detail -->
+<form method="POST" asp-area="OrganizerArea" asp-controller="PersonalData" asp-action="Index" class="form form-organizerdata-detail">
+	<br /><label>Organizer Groups: </label>
+	<!-- Readonly listbox selection-->
+	<select multiple="multiple" asp-for="OrganizerGroupListValues"  asp-items="@Model.OrganizerGroupList" onchange="this.selectedIndex = -1" onfocus="this.blur()">
+		<!-- This requires JS enabled -->
+	</select>
+	<br /><label>Organizer Code: </label>
+	<input type="text" asp-for="OrganizerCode"class="input-text" readonly>
+	<br /><label>First Name: </label>
+	<input type="text" asp-for="OrganizerFName" class="input-text" readonly>
+	<br /><label>Middle Name1: </label>
+	<input type="text" asp-for="OrganizerM1Name" class="input-text" readonly>
+	<br /><label>Middle Name2: </label>
+	<input type="text" asp-for="OrganizerM2Name" class="input-text" readonly>
+	<br /><label>Last Name: </label>
+	<input type="text" asp-for="OrganizerLName" class="input-text" readonly>
+	<br /><label>Email: </label>
+	<input type="email" asp-for="OrganizerEmail" class="input-text" readonly>
+	<br /><label>Mobile1: </label>
+	<input type="text" asp-for="OrganizerMobile1" class="input-text" readonly>
+	<br /><label>Mobile2: </label>
+	<input type="text" asp-for="OrganizerMobile2" class="input-text" readonly>
+	<br /><label>Occupation: </label>
+	<input type="text" asp-for="OrganizerOccupation" class="input-text" readonly>
+</form>
+<!-- End of form  Organizer Data Detail -->

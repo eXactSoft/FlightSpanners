@@ -1,74 +1,254 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FlightSpanners</title>
+﻿@using System.Security.Claims;
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+@{// Get the area, controller, and action that renders the current view
+	string fromArea = @ViewContext.RouteData.Values["area"].ToString().ToLower();
+	string fromController = @ViewContext.RouteData.Values["controller"].ToString().ToLower();
+	string fromAction = @ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+<!-- html en file -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<!-- Define the character set used -->
+	<meta charset="UTF-8">
+	<!-- Defines a title in the browser tab -->
+	<title>@ViewBag.Title</title>
+	<!-- Define a description of the web page -->
+	<meta name="description" content="Allow the organizer to equally distribute a number of flights to a group of authorized spanners according to a number of factors.">
+	<!-- Define keywords for search engines -->
+	<meta name="keywords" content="organizer, spanner, flight">
+	<!-- Define the author of the page -->
+	<meta name="author" content="Amr Mostafa Mohamed Khalfalla">
+	<!--
+				The viewport is the user's visible area of a web page. It varies with the device, and will be smaller
+				on a mobile phone than on a computer screen.
+				Viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+				The width=device-width part sets the width of the page to follow the screen-width of the device
+				The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- The following is the link to the reset file -->
+	<link rel="stylesheet" type="text/css" href="~/css/normalize.css">
+	<!-- The following is the external style link where rel=relationship, href=ref to the css file -->
+	<link rel="stylesheet" type="text/css" href="~/css/main.css">
+	<!-- The following is the link to the font awesome icons framework -->
+	<link rel="stylesheet" href="~/fontawesome-free-5.7.1-web/css/all.css">
+	<!-- The link to icon file that will appears at the browser tip	-->
+	<link rel="icon" href="~/images/icon16X16.ico">
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">FlightSpanners</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <partial name="_CookieConsentPartial" />
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - FlightSpanners</p>
-        </footer>
-    </div>
-
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("Scripts", required: false)
+	<!-- Start header section -->
+	<header class="header">
+		<div class="icon-left">
+			<p>
+				Flight Spanners
+			</p>
+		</div>
+		<!-- Start header right icon -->
+		<div class="icon-right">
+			<p>
+				<a asp-area=@fromArea asp-controller=@fromController asp-action="index">
+					@{
+						// Select the right icon based on the controller that renders this view
+						switch (fromController)
+						{
+							case "home":
+								<i class="fas fa-sign-in-alt"></i> <br> <span>Sign in</span>
+								break;
+							case "flightrecord":
+								<i class="fas fa-plane-departure"></i> <br> <span>Flight Records</span>
+								break;
+							case "flightsummary":
+								<i class="fas fa-plane"></i> <br> <span>Flights Summary</span>
+								break;
+							case "inactivedays":
+								<i class="fas fa-user-slash"></i> <br> <span>In-Active Days</span>
+								break;
+							case "spannerdata":
+								<i class="far fa-user"></i> <br> <span>Spanners Data</span>
+								break;
+							case "approvals":
+								<i class="far fa-id-card"></i> <br> <span>Approvals</span>
+								break;
+							case "groupdata":
+								<i class="fas fa-users"></i> <br> <span>Group Data</span>
+								break;
+							case "personaldata":
+								<i class="far fa-user-circle"></i> <br> <span>Personal Data</span>
+								break;
+							default:
+								break;
+						}
+					}
+				</a>
+			</p>
+		</div>
+		<!-- End header right icon -->
+		<div class="clearfix"></div>
+	</header>
+	<!-- End header section -->
+	<!-- Start nav section -->
+	@if (User.Identity.IsAuthenticated)// Only display the nav if the controller is not home
+	{
+		<nav>
+			<!-- This checkbox only to simulate the toggle effect and would be hidden -->
+			<input type="checkbox" id="toggle">
+			<!-- Start toggle-container class -->
+			<div class="toggle-container">
+				<!-- Humberger code: &#9776;, X code:&#935; -->
+				<!-- The for attribute's value of the label matches the id (not the name) of the checkbox
+						so you can click this label to change the state of the checkbox. -->
+				<label for="toggle">
+					<span><i class="fas fa-bars"></i></span>
+					<span><i class="fas fa-times"></i></span>
+				</label>
+				<div class="clearfix"></div>
+			</div>
+			<!-- End toggle-container class -->
+			<!-- Start menu-container class -->
+			<div class="menu-container">
+				@if (User.FindFirst(ClaimTypes.Role).Value.ToLower().Equals("organizer"))
+				{
+					<ul class="ul-main">
+						<li>
+							<span><i class="fas fa-plane-departure"></i>&nbsp;Flight Records</span>
+							<ul class="ul-sub">
+								<li><a href="#">Add</a></li>
+								<li><a href="#">View Unprocessed</a></li>
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-plane"></i>&nbsp;Flights Summary</span>
+							<ul class="ul-sub">
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-user-slash"></i>&nbsp;In-Active Days</span>
+							<ul class="ul-sub">
+								<li><a href="#">Add</a></li>
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-user"></i>&nbsp;Spanners Data</span>
+							<ul class="ul-sub">
+								<li><a href="#">Add</a></li>
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-id-card"></i>&nbsp;Approvals</span>
+							<ul class="ul-sub">
+								<li><a href="#">Add</a></li>
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-users"></i>&nbsp;Group Data</span>
+							<ul class="ul-sub">
+								<li><a href="#">Add</a></li>
+								<li><a href="#">View All</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-user-circle"></i>&nbsp;Personal Data</span>
+							<ul class="ul-sub">
+								<li><a asp-area="OrganizerArea" asp-controller="PersonalData" asp-action="Index">View Mine</a></li>
+								<li><a asp-area="CommonArea" asp-controller="Home" asp-action="ChangePassword">Change Password</a></li>
+							</ul>
+						</li>
+						<li>
+							<a asp-area="CommonArea" asp-controller="Home" asp-action="Signout"><i class="fas fa-sign-out-alt"></i>&nbsp;Sign out</a>
+						</li>
+					</ul>
+				}
+				else //If user is Spanner
+				{
+					<ul class="ul-main">
+						<li>
+							<span><i class="fas fa-plane-departure"></i>&nbsp;Flight Records</span>
+							<ul class="ul-sub">
+								<li><a href="#">View Mine</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-plane"></i>&nbsp;Flights Summary</span>
+							<ul class="ul-sub">
+								<li><a href="#">View Mine</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-user-slash"></i>&nbsp;In-Active Days</span>
+							<ul class="ul-sub">
+								<li><a href="#">View Mine</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-id-card"></i>&nbsp;Approvals</span>
+							<ul class="ul-sub">
+								<li><a href="#">View Mine</a></li>
+								<li><a href="#">Search</a></li>
+							</ul>
+						</li>
+						<li>
+							<span><i class="fas fa-user-circle"></i>&nbsp;Personal Data</span>
+							<ul class="ul-sub">
+								<li><a asp-area="SpannerArea" asp-controller="PersonalData" asp-action="Index">View Mine</a></li>
+								<li><a asp-area="CommonArea" asp-controller="Home" asp-action="ChangePassword">Change Password</a></li>
+							</ul>
+						</li>
+						<li>
+							<a asp-area="CommonArea" asp-controller="Home" asp-action="Signout"><i class="fas fa-sign-out-alt"></i>&nbsp;Sign out</a>
+						</li>
+					</ul>
+				}
+			</div>
+			<!-- End menu-container class -->
+			<div class="clearfix"></div>
+		</nav>
+	}
+	<!-- End nav section -->
+	<!-- Start main section -->
+	<main>
+		<!-- Start main-container class -->
+		<div class="main-container">
+			@RenderBody()<!--Render each form here -->
+		</div>
+		<!-- End main-container class -->
+	</main>
+	<!-- End main section -->
+	<!-- Start footer section -->
+	@{// Ensure that the footer is in the bottom of the screen if the controller is Home
+		// or
+		string footerBottomCssClass =
+			fromController.Equals("home") //||
+																		//( fromController.Equals("personaldata") && fromAction.Equals("changepassword") )
+			? "footerbottom" : null;
+	}
+	<footer class="@footerBottomCssClass">
+		<div class="footer-container">
+			<p class="footer-left">
+				<!--	<i class="far fa-copyright"></i> -->
+				&copy; &nbsp;2019
+				Flight Spanners, All rights reserved.
+			</p>
+			<p class="footer-right">
+				<a href="#">Amr Mostafa Mohamed</a>
+			</p>
+			<div class="clearfix"></div>
+		</div>
+	</footer>
+	<!-- End footer section -->
 </body>
 </html>

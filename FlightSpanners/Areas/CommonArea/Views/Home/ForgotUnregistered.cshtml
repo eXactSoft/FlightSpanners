@@ -1,0 +1,13 @@
+﻿@model FlightSpanners.Areas.CommonArea.ViewModels.SigninViewModel
+
+@{
+	ViewBag.Title = "Call Admin";
+	var tel = "01004563217"; // Admin mobile
+}
+<!-- Start of form forgot-unregistered -->
+<form method="POST" asp-area="CommonArea" asp-controller="Home" asp-action="ForgotUnregistered" class="form form-forgot-unregistered">
+	<br /><label>Call Administrator at: </label>
+	<input type="text" class="input-text" value=@tel readonly>
+	<br /><a asp-area="CommonArea" asp-controller="Home" asp-action="Index">Sign in </a>
+</form>
+<!-- End of form forgot-unregistered -->

@@ -1,0 +1,55 @@
+﻿@model FlightSpanners.Areas.SpannerArea.ViewModels.SpannerDataViewModel
+
+@{
+	ViewBag.Title = "Personal Data";
+}
+<!-- Start of form Spanner Data Detail -->
+<form method="POST" asp-area="SpannerArea" asp-controller="PersonalData" asp-action="Index" class="form form-organizerdata-detail">
+	<br /><label>Approvals: </label>
+	<!-- Readonly listbox selection-->
+	<select multiple="multiple" asp-for="ApprovalListValues" asp-items="@Model.ApprovalList" onchange="this.selectedIndex = -1" onfocus="this.blur()">
+		<!-- This requires JS enabled -->
+	</select>
+	<fieldset>
+		<legend>Qualification:</legend>
+		<label>Name: </label>
+		<input type="text" asp-for="SpannerQualification.QualificationName" class="input-text" readonly>
+		<br /><label>Major: </label>
+		<input type="text" asp-for="SpannerQualification.QualificationMajor" class="input-text" readonly>
+		<br /><label>Degree: </label>
+		<input type="text" asp-for="SpannerQualification.QualificationDegree" class="input-text" readonly>
+	</fieldset>
+	<br /><label>Code: </label>
+	<input type="text" asp-for="SpannerCode" class="input-text" readonly>
+	<br /><label>License No: </label>
+	<input type="text" asp-for="SpannerLicenseNo" class="input-text" readonly>
+	<br /><label>Group Name: </label>
+	<input type="text" asp-for="GroupName" class="input-text" readonly>
+	<br /><label>First Name: </label>
+	<input type="text" asp-for="SpannerFName" class="input-text" readonly>
+	<br /><label>Middle Name1: </label>
+	<input type="text" asp-for="SpannerM1Name" class="input-text" readonly>
+	<br /><label>Middle Name2: </label>
+	<input type="text" asp-for="SpannerM2Name" class="input-text" readonly>
+	<br /><label>Last Name: </label>
+	<input type="text" asp-for="SpannerLName" class="input-text" readonly>
+	<br /><label>Email: </label>
+	<input type="email" asp-for="SpannerEmail" class="input-text" readonly>
+	<br /><label>Mobile1: </label>
+	<input type="text" asp-for="SpannerMobile1" class="input-text" readonly>
+	<br /><label>Mobile2: </label>
+	<input type="text" asp-for="SpannerMobile2" class="input-text" readonly>
+	<br /><label>Gender: </label>
+	<input type="text" asp-for="SpannerGender" class="input-text" readonly>
+	<br /><label>Birthday: </label>
+	<input type="text" asp-for="SpannerBirthday" class="input-text" readonly>
+	<br /><label>Hire Date: </label>
+	<input type="text" asp-for="SpannerHireDate" class="input-text" readonly>
+	<br /><label>Department Name: </label>
+	<input type="text" asp-for="DepartmentName" class="input-text" readonly>
+	<br /><input type="checkbox" asp-for="IsSpannerViewGroupData" class="input-checkbox">
+	<label class="label-endofcheckbox">View Group data</label>
+	<br /><input type="checkbox" asp-for="IsSpannerHasCar" class="input-checkbox">
+	<label class="label-endofcheckbox">Has a car</label>
+</form>
+<!-- End of form  Organizer Data Detail -->

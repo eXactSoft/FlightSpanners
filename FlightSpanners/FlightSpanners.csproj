@@ -1,12 +1,51 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\css\normalize.css" />
+    <None Include="wwwroot\fontawesome-free-5.5.0-web\css\all.css" />
+    <None Include="wwwroot\fontawesome-free-5.5.0-web\css\all.min.css" />
+    <None Include="wwwroot\images\icon12X16.ico" />
+    <None Include="wwwroot\images\icon16X16.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\CommonArea\Views\Home\ForgotUnregistered.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\CommonArea\Views\Home\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\OrganizerArea\Views\PersonalData\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\CommonArea\Views\Home\ChangePassword.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\SpannerArea\Views\PersonalData\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\OrganizerArea\Services\" />
+    <Folder Include="Areas\SpannerArea\Services\" />
+  </ItemGroup>
+
 
 </Project>
