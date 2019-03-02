@@ -1,5 +1,5 @@
-*.cs linguist-language=C#
-*.H linguist-language=C#
-*.cshtml linguist-language=C#
+*.cs linguist-language=C#_ASP.Net Core
+*.H linguist-language=C#_ASP.Net Core
+*.cshtml linguist-language=C#_ASP.Net Core
 UI/* linguist-vendored
 FlightSpanners/wwwroot/* linguist-vendored 
