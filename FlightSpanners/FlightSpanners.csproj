@@ -25,6 +25,9 @@
     <Content Update="Areas\CommonArea\Views\Home\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Areas\OrganizerArea\Views\FlightSummary\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\OrganizerArea\Views\PersonalData\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

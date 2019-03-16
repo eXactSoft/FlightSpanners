@@ -16,14 +16,10 @@ using System.Threading.Tasks;
 namespace FlightSpanners.Areas.OrganizerArea.ViewModels //.Home
 {
   public class OrganizerDataViewModel
-  {
+	{
 		//Constructor injection
 		public OrganizerDataViewModel(IHttpContextAccessor httpContext, IFlightSpannersData flightSpannersData)
 		{
-			//IServiceProvider services = HttpContext.RequestServices;  
-			//[Optional] [FromServices] 
-			//var log = (IOrganizerData)services.GetService(typeof(IOrganizerData));
-
 			string code = httpContext.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
 			//Return the organizer based on the code

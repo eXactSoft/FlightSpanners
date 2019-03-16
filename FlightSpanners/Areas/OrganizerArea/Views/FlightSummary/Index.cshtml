@@ -1,0 +1,61 @@
+﻿@model FlightSpanners.Areas.OrganizerArea.ViewModels.FlightSummaryViewModel
+
+@{
+	ViewBag.Title = "Flight Summary";
+	ViewBag.OrganizerGroups = @Model.OrganizerGroups;
+	ViewBag.SummaryList = @Model.SummaryList;
+}
+<!-- Start Start of form flightsummary-organizer-viewall -->
+<form method="POST" asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Index" class="form form-flightsummary-organizer-viewall">
+	<br /><label>Group Name: </label>
+	<select asp-for="OrganizerGroupId" asp-items="@Model.OrganizerGroups" onchange="this.form.submit()">
+		<!-- onchange="this.selectedIndex = 0" onfocus="this.blur()"> -->
+		<!-- This requires JS enabled -->
+	</select>
+	<div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th>Spanner<br />Name</th>
+					<th>Spanner<br />Code</th>
+					<th>Deserved<br />Flights</th>
+					<th>All<br />Flights</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var summary in Model.SummaryList)
+				{
+					<tr>
+						<td>@summary.SpannerName</td>
+						<td>@summary.SpannerCode</td>
+						<td>@summary.DeservedFlights</td>
+						<td>@summary.AllFlights</td>
+						<td><a asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Detail">Detail</a></td><!--To be implemented later-->
+					</tr>
+					<!-- input type="hidden" asp-for="" /> -->
+				}
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5">
+						<div class="pagination">
+							<a href="#">&laquo;</a>
+							<a href="#">❮</a>
+							<a href="#">1</a>
+							<a class="active" href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">❯</a>
+							<a href="#">&raquo;</a>
+						</div>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	
+</form>
+<!-- End Start of form flightsummary-organizer-viewall -->
