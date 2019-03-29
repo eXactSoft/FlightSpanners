@@ -57,6 +57,30 @@ namespace FlightSpanners.Areas.CommonArea.Services
 			return false;
 		}
 
+		public bool ValidateOrganizerCode(string code)
+		{
+			object user = _context.Organizer.FirstOrDefault(r => r.OrganizerCode == code);
+
+			if (user != null)
+			{
+				return true;
+			}
+
+			return false;
+		}
+
+		public bool ValidateSpannerCode(string code)
+		{
+			object user = _context.Spanner.FirstOrDefault(r => r.SpannerCode == code);
+
+			if (user != null)
+			{
+				return true;
+			}
+
+			return false;
+		}
+
 		public bool ValidatePasswordOrganizer(string code, string password)
     {
 			Organizer organizer = _context.Organizer.FirstOrDefault(r => r.OrganizerCode == code);
@@ -110,9 +134,9 @@ namespace FlightSpanners.Areas.CommonArea.Services
 								).Count();
 		}
 
+		//Get the number of short flights for a given spanner code
 		public double GetFlightsShort(string code)
 		{
-			/*
 			var flightRecordsForGivenCodeQuery = from fligthRecord in _context.FlightRecord // outer sequence
 																						join approval in _context.Approval //inner sequence 
 																						on fligthRecord.ApprovalId equals approval.ApprovalId // key selector 
@@ -125,15 +149,15 @@ namespace FlightSpanners.Areas.CommonArea.Services
 																				select flightData;
 
 			//double shortDistanceTypeCostant = GetDistanceType("short").DistanceTypeCostant;
-
+			DistanceType distanceType = GetDistanceType("short");
 			double shortFlightsForGivenCode = (from fligthData in flightDataForGivenCodeQuery
-																				 where SectorTimeCheckByDistanceTypeName(fligthData.DefaultSectorTime.TotalHours, "short")
+																				 where SectorTimeCheckByDistanceTypeName(fligthData.DefaultSectorTime.TotalHours, distanceType)
 																				 select fligthData.DefaultSectorTime
 																				).Count();// * shortDistanceTypeCostant;
 
 			return shortFlightsForGivenCode;
-			*/
-			return 2.0;
+			
+			//return 2.0;
 		}
 
 		public double GetFlightsLong(string code)
@@ -202,9 +226,9 @@ namespace FlightSpanners.Areas.CommonArea.Services
 			return 2.0;
 		}
 		//This method to check a given sectorTime is of type distanceTypeName or not.
-		private bool SectorTimeCheckByDistanceTypeName(double sectorTime, string distanceTypeName)
+		private bool SectorTimeCheckByDistanceTypeName(double sectorTime, DistanceType distancetype)
 			{
-				var distancetype = GetDistanceType(distanceTypeName);
+				//var distancetype = GetDistanceType(distanceTypeName);
 
 				return
 					SectorTimeCheckByConverStringToOperator(distancetype.UpperOperator, sectorTime, distancetype.UpperSectorTime)
@@ -270,7 +294,11 @@ namespace FlightSpanners.Areas.CommonArea.Services
 				i++;
 			}
 			return options;
+		}
 
+		public string GetSpannerGroup(string code) //IQuarable
+		{
+			return _context.Spanner.FirstOrDefault(r => r.SpannerCode == code).GroupName;
 		}
 
 		public Qualification GetQualificationOfSpanner(string code)
@@ -310,7 +338,7 @@ namespace FlightSpanners.Areas.CommonArea.Services
 			return options;
 		}
 
-		public int[] ConvertLengthToIntArray(int length)
+		/*public int[] ConvertLengthToIntArray(int length)
 		{
 			int[] arrayInt = new int[length];
 			for (int i = 0; i < length; i++)
@@ -318,7 +346,7 @@ namespace FlightSpanners.Areas.CommonArea.Services
 				arrayInt[i] = i;
 			}
 			return arrayInt;
-		}
+		}*/
 
 		public string ControllerName(string name)
 		{

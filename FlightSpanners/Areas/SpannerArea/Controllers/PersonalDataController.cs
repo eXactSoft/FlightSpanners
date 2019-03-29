@@ -16,7 +16,7 @@ using FlightSpanners.Areas.SpannerArea.Controllers;
 namespace FlightSpanners.Areas.SpannerArea.Controllers
 {
 	[Area("SpannerArea")] //Let the framework know which area this controller belongs to
-	[Authorize(Roles ="spanner")]
+	[Authorize(Roles ="Spanner")]
 	public class PersonalDataController : Controller
 	{
 		private IFlightSpannersData _flightSpannersData;

@@ -2,16 +2,9 @@
 
 @{
 	ViewBag.Title = "Flight Summary";
-	ViewBag.OrganizerGroups = @Model.OrganizerGroups;
-	ViewBag.SummaryList = @Model.SummaryList;
 }
 <!-- Start Start of form flightsummary-organizer-viewall -->
 <form method="POST" asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Index" class="form form-flightsummary-organizer-viewall">
-	<br /><label>Group Name: </label>
-	<select asp-for="OrganizerGroupId" asp-items="@Model.OrganizerGroups" onchange="this.form.submit()">
-		<!-- onchange="this.selectedIndex = 0" onfocus="this.blur()"> -->
-		<!-- This requires JS enabled -->
-	</select>
 	<div class="table-container">
 		<table>
 			<thead>
@@ -31,7 +24,7 @@
 						<td>@summary.SpannerCode</td>
 						<td>@summary.DeservedFlights</td>
 						<td>@summary.AllFlights</td>
-						<td><a asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Detail">Detail</a></td><!--To be implemented later-->
+						<td><a asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Detail" asp-route-SpannerCode="@summary.SpannerCode">Detail</a></td><!--To be implemented later-->
 					</tr>
 					<!-- input type="hidden" asp-for="" /> -->
 				}

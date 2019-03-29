@@ -1,0 +1,42 @@
+﻿@model FlightSpanners.Areas.OrganizerArea.ViewModels.FlightSummaryDetailViewModel
+
+@{
+	ViewBag.Title = "Flight Summary Detail";
+}
+<!-- Start of form flightsummary-organizer-detail -->
+<form method="POST" asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Detail" class="form form-flightsummary-organizer-detail">
+	<br /><label>Group Name: </label>
+	<input type="text" asp-for="GroupName" class="input-text" readonly>
+	<fieldset>
+		<legend>Spanner Info:</legend>
+		<br /><label>Code: </label>
+		<input type="text" asp-for="SpannerCode" class="input-text" readonly>
+		<br /><label>License: </label>
+		<input type="text" asp-for="SpannerLicenseNo" class="input-text" readonly>
+		<br /><label>Name: </label>
+		<input type="text" asp-for="SpannerName" class="input-text" readonly>
+	</fieldset>
+	<br /><label>Deserved Flights: </label>
+	<input type="text" asp-for="DeservedFlights" class="input-text" readonly>
+	<br /><label>Balance: </label>
+	<input type="text" asp-for="Balance" class="input-text" readonly>
+	<br /><label>Short Flights: </label>
+	<input type="text" asp-for="ShortFlights" class="input-text" readonly>
+	<br /><label>Long Flights: </label>
+	<input type="text" asp-for="LongFlights" class="input-text" readonly>
+	<br /><label>Extra Flights: </label>
+	<input type="text" asp-for="ExtraFlights" class="input-text" readonly>
+	<br /><label>Multiple Flights: </label>
+	<input type="text" asp-for="MultipleFlights" class="input-text" readonly>
+	<br /><label>Apology Flights: </label>
+	<input type="text" asp-for="ApologyFlights" class="input-text" readonly>
+	<br /><label>Bonus Flights: </label>
+	<input type="text" asp-for="BonusFlights" class="input-text" readonly>
+	<br /><label>Holiday Flights: </label>
+	<input type="text" asp-for="HolidayFlights" class="input-text" readonly>
+	<br /><label>Month Flights: </label>
+	<input type="text" asp-for="CurrentMonthFlights" class="input-text" readonly>
+	<br /><input type="checkbox" asp-for="IsCurrentlyInActive" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
+	<label class="label-endofcheckbox">Currently InActive</label>
+</form>
+<!-- End of form flightsummary-organizer-detail -->

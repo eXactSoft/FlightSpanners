@@ -22,7 +22,13 @@
     <Content Update="Areas\CommonArea\Views\Home\ForgotUnregistered.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Areas\CommonArea\Views\Home\SignIn.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\CommonArea\Views\Home\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\OrganizerArea\Views\FlightSummary\Detail.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\OrganizerArea\Views\FlightSummary\Index.cshtml">

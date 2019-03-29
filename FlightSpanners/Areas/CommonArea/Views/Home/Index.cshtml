@@ -1,31 +1,30 @@
-﻿@model FlightSpanners.Areas.CommonArea.ViewModels.SigninViewModel
+﻿@model FlightSpanners.Areas.CommonArea.ViewModels.IndexViewModel
 
 @{ 
-	ViewBag.Title = "Organizer Signin";
+	ViewBag.Title = "SignIn Code";
 }
-	<!-- Start of form signin -->
-<form method="POST" asp-area="CommonArea" asp-controller="Home" asp-action="Signin" asp-route-returnurl="@ViewData["ReturnUrl"]" class="form form-signin">
+	<!-- Start of form index -->
+<form method="POST" asp-area="CommonArea" asp-controller="Home" asp-action="Index" asp-route-returnurl="@ViewData["ReturnUrl"]" class="form form-signin">
 	@if (@ViewBag.error != null)
 	{
 		<h2> @ViewBag.error </h2>
 	}
 	<br /><input type="text" asp-for="Code" class="input-text" placeholder="Code">
 	<br /><span asp-validation-for="Code" class="error"></span>
-	<br /><input type="password" asp-for="Password" class="input-text" placeholder="Password">
-	<br /><span asp-validation-for="Password" class="error"></span>
-	<br /><a asp-area="CommonArea" asp-controller="Home" asp-action="ForgotUnregistered">Forgot Password?</a>
-	<br /><input type="submit" class="submit" value="Sign in">
+	<br /><select asp-for="SignInUserRole">
+		<option value="">--Select Role--</option>
+		<option value="0">Organizer</option>
+		<option value="1">Spanner</option>
+	</select>
+	<br /><span asp-validation-for="SignInUserRole"  class="error"></span>
+	<br /><input type="submit" class="submit" value="Submit Code">
 	<br /><label>Don't have an account?</label>&nbsp;<a asp-area="CommonArea" asp-controller="Home" asp-action="ForgotUnregistered">Call Administrator</a>
 
 	<!-- Check if the user is select to signin as spanner-->
-	@if( !@Model.IsSigninAsSpanner )
-	{
-		<br /><a asp-area="CommonArea" asp-controller="Home" asp-action="SigninAsSpanner">Sign in as Spanner</a>
-	}
-	<!-- hidden input element to bind IsSigninAsSpanner of the Model -->
-	<input type="hidden" asp-for="IsSigninAsSpanner">
-
-
+	@*@if (!@Model.IsSigninAsSpanner)
+		{
+			<br /><a asp-area="CommonArea" asp-controller="Home" asp-action="SigninAsSpanner">Sign in as Spanner</a>
+		}*@
 </form>
-<!-- End of form signin -->
+<!-- End of form index -->
 

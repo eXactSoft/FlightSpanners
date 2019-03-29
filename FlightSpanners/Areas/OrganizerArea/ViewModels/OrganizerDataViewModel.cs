@@ -1,7 +1,6 @@
 ﻿
 using FlightSpanners.Areas.CommonArea.Models;
 using FlightSpanners.Areas.CommonArea.Services;
-//using FlightSpanners.Areas.OrganizerArea.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -38,9 +37,6 @@ namespace FlightSpanners.Areas.OrganizerArea.ViewModels //.Home
 			//Get the OrganizerGroupList item of the model using GetOrganizerGroupNames(code) method
 			this.OrganizerGroupList = flightSpannersData.GetOrganizerGroupSelectListItems(code);
 			//ViewBag.OrganizerGroupList = model.OrganizerGroupList;
-
-			//Get the OrganizerGroupListValues array from the length of OrganizerGroupList
-			this.OrganizerGroupListValues = flightSpannersData.ConvertLengthToIntArray(this.OrganizerGroupList.Count);
 		}
 
 		public string OrganizerCode { get; set; }

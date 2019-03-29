@@ -7,8 +7,9 @@
 <form method="POST" asp-area="SpannerArea" asp-controller="PersonalData" asp-action="Index" class="form form-organizerdata-detail">
 	<br /><label>Approvals: </label>
 	<!-- Readonly listbox selection-->
-	<select multiple="multiple" asp-for="ApprovalListValues" asp-items="@Model.ApprovalList" onchange="this.selectedIndex = -1" onfocus="this.blur()">
-		<!-- This requires JS enabled -->
+	<select multiple="multiple" asp-for="ApprovalListValues" asp-items="@Model.ApprovalList">
+		<!-- onchange="this.selectedIndex = -1" onfocus="this.blur()">
+			This requires JS enabled -->
 	</select>
 	<fieldset>
 		<legend>Qualification:</legend>

@@ -12,16 +12,18 @@ using System.Threading.Tasks;
 namespace FlightSpanners.Areas.OrganizerArea.Controllers
 {
 	[Area("OrganizerArea")] //Let the framework know which area this controller belongs to
-	[Authorize(Roles = "organizer")]
+	[Authorize(Roles = "Organizer")]
 	public class FlightSummaryController : Controller
 	{
 		private IFlightSpannersData _flightSpannersData;
 		private FlightSummaryViewModel _flightsSummaryViewModel;
+		private FlightSummaryDetailViewModel _flightsSummaryDetailViewModel;
 
-		public FlightSummaryController(IFlightSpannersData flightSpannersData, FlightSummaryViewModel flightsSummaryViewModel)
+		public FlightSummaryController(IFlightSpannersData flightSpannersData, FlightSummaryViewModel flightsSummaryViewModel, FlightSummaryDetailViewModel flightsSummaryDetailViewModel)
 		{
 			_flightSpannersData = flightSpannersData;
 			_flightsSummaryViewModel = flightsSummaryViewModel;
+			_flightsSummaryDetailViewModel = flightsSummaryDetailViewModel;
 		}
 
 		[HttpGet]
@@ -51,5 +53,20 @@ namespace FlightSpanners.Areas.OrganizerArea.Controllers
 			var y = ViewBag.Title;
 			return View(nameof(FlightSummaryController.Index), model);
 		}
+
+		public IActionResult Detail(string spannerCode)
+		{
+			if (spannerCode == null)
+			{
+				return RedirectToAction(nameof(HomeController.Index));
+			}
+			else
+			{
+				_flightsSummaryDetailViewModel.SetFlightSummaryDetailViewModel(spannerCode);
+				//_flightsSummaryViewModel.InitializeSummaryViewModel(HttpContext, _flightSpannersData);
+				return View(nameof(FlightSummaryController.Detail), _flightsSummaryDetailViewModel);
+			}
+		}
+
 	}
 }

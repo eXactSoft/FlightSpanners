@@ -33,11 +33,15 @@ namespace FlightSpanners.Areas.CommonArea.Services
 		bool IsCurrentlyInActive(string spannerCode);
 		double GetSpannerBalance(string spannerCode);
 		double GetSpannerDeservedFlights(string spannerCode);
+		string GetSpannerGroup(string code);
+
+		bool ValidateOrganizerCode(string code);
+		bool ValidateSpannerCode(string code);
 
 		DistanceType GetDistanceType(string distanceTypeName);
 
 		bool UpdatePassword(string code, string newPassword);
-		int[] ConvertLengthToIntArray(int length);
+		//int[] ConvertLengthToIntArray(int length);
 		string ControllerName(string name);
 	}
 }

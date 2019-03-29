@@ -54,6 +54,10 @@ namespace FlightSpanners
 
 			//Transient: services are created each time they're requested. 
 			//					 This lifetime works best for lightweight, stateless services.
+
+			//Register FlightSummaryDetailViewModel object in services
+			services.AddTransient<FlightSummaryDetailViewModel>();
+
 			//Register FlightSummaryViewModel object in services
 			services.AddTransient<FlightSummaryViewModel>();
 

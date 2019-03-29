@@ -51,15 +51,6 @@ namespace FlightSpanners.Areas.SpannerArea.ViewModels //.Home
 
 			//Get the ApprovalList item of the model using GetApprovalSelectListItems(code) method
 			this.ApprovalList = flightSpannersData.GetApprovalSelectListItems(code);
-
-			//Get the InActivePeriodList item of the model using GetInActivePeriodListItems(code) method
-			//this.InActivePeriodList = flightSpannersData.GetInActivePeriodListItems(code);
-
-			//Get the ApprovalListValues array from the length of ApprovalList
-			this.ApprovalListValues = flightSpannersData.ConvertLengthToIntArray(this.ApprovalList.Count);
-
-			//Get the InActivePeriodListValues array from the length of InActivePeriodList
-			//this.InActivePeriodListValues = flightSpannersData.ConvertLengthToIntArray(this.InActivePeriodList.Count);
 		}
 
 		public string SpannerCode { get; set; }
@@ -82,8 +73,9 @@ namespace FlightSpanners.Areas.SpannerArea.ViewModels //.Home
 		public Qualification SpannerQualification { get; set; }
 
 		public List<SelectListItem> ApprovalList { get; set; }
-		//public List<SelectListItem> InActivePeriodList { get; set; }
 		public int[] ApprovalListValues { get; set; }
+
+		//public List<SelectListItem> InActivePeriodList { get; set; }
 		//public int[] InActivePeriodListValues { get; set; }
 	}
 }

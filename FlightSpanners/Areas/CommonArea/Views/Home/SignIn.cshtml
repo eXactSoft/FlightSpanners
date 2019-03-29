@@ -1,0 +1,39 @@
+﻿@model FlightSpanners.Areas.CommonArea.ViewModels.SignInViewModel
+
+@{ 
+	ViewBag.Title = "SignIn";
+	string role = Model.SignInUserRole.Equals("0") ? "Organizer" : "Spanner";
+}
+	<!-- Start of form signin -->
+<form method="POST" asp-area="CommonArea" asp-controller="Home" asp-action="SignIn" asp-route-returnurl="@ViewData["ReturnUrl"]" class="form form-signin">
+	@if (@ViewBag.error != null)
+	{
+		<h2> @ViewBag.error </h2>
+	}
+	@if (role.Equals("Organizer"))
+	{
+		<br /><select asp-for="OrganizerGroupId" asp-items="@Model.OrganizerGroups">
+			<option value="">--Select Group--</option>
+		</select>
+		<br /><span asp-validation-for="OrganizerGroupId" class="error"></span>
+	}
+	<br /><input type="password" asp-for="Password" class="input-text" placeholder="Password">
+	<br /><span asp-validation-for="Password" class="error"></span>
+	<br /><a asp-area="CommonArea" asp-controller="Home" asp-action="ForgotUnregistered">Forgot Password?</a>
+	<br /><input type="submit" class="submit" value="Sign in">
+	<br /><label>Don't have an account?</label>&nbsp;<a asp-area="CommonArea" asp-controller="Home" asp-action="ForgotUnregistered">Call Administrator</a>
+	<!-- hidden input element to bind Code of the Model -->
+	<input type="hidden" asp-for="Code" class="input-text" placeholder="Code">
+	<!-- hidden input element to bind IsSigninAsSpanner of the Model -->
+	<input type="hidden" asp-for="SignInUserRole">
+	<!-- hidden input element to bind IsSigninAsSpanner of the Model -->
+	<input type="hidden" asp-for="ReturnUrl">
+
+	<!-- Check if the user is select to signin as spanner-->
+	@*@if (!@Model.IsSigninAsSpanner)
+		{
+			<br /><a asp-area="CommonArea" asp-controller="Home" asp-action="SigninAsSpanner">Sign in as Spanner</a>
+		}*@
+</form>
+<!-- End of form signin -->
+
