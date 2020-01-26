@@ -114,11 +114,17 @@ namespace FlightSpanners.Areas.CommonArea.Services
 			return _context.Spanner.FirstOrDefault(r => r.SpannerCode == code);
 		}
 
-		public IEnumerable<Spanner> GetSpannersFromGroupName(string groupName)
+		public IEnumerable<Spanner> GetSpannersByGroupName(string groupName)
 		{
+			/*
 			var spannerQuery = from spanner in _context.Spanner // outer sequence
 													join groupOfSpanners in _context.GroupOfSpanners //inner sequence 
-													on spanner.GroupName equals groupName // key selector 
+													on spanner.GroupName equals groupOfSpanners.GroupName // key selector 
+												 //where spanner.GroupName.Equals(groupName)
+												 select spanner;
+			*/
+			var spannerQuery = from spanner in _context.Spanner // outer sequence
+											   where spanner.GroupName.Equals(groupName)
 												 select spanner;
 
 			return spannerQuery;
@@ -329,7 +335,7 @@ namespace FlightSpanners.Areas.CommonArea.Services
 				options.Add(new SelectListItem { Value = i.ToString(),
 					Text = approvalDetailQuery.ApprovalRating + ", " 
 								 + approvalDetailQuery.ApprovalCategory + ", "
-								 + aircraftTypeQuery.AircrfatModel + ", "
+								 + aircraftTypeQuery.AircraftModel + ", "
 								 + aircraftTypeQuery.EngineModel 
 				});
 				i++;
@@ -338,6 +344,84 @@ namespace FlightSpanners.Areas.CommonArea.Services
 			return options;
 		}
 
+		public IEnumerable<Approval> GetApprovalBySpannerCode(string code)
+		{
+			return (from approval in _context.Approval
+							where (approval.SpannerCode == code)
+							select approval);
+		}
+
+		public IEnumerable<InActivePeriod> GetInActivePeriodByGroupName(string groupName)
+		{
+			return (from inActivePeriod in _context.InActivePeriod // outer sequence
+							join spanner in _context.Spanner //inner sequence 
+							on inActivePeriod.SpannerCode equals spanner.SpannerCode // key selector 
+							where spanner.GroupName.Equals(groupName)
+							select inActivePeriod
+						 );
+		}
+		public IEnumerable<InActivePeriod> GetInActivePeriodBySpannerCode(string spannerCode)
+		{
+			return (from inActivePeriod in _context.InActivePeriod 
+							where inActivePeriod.SpannerCode.Equals(spannerCode)
+							select inActivePeriod
+						 );
+		}
+		public IEnumerable<FlightRecord> GetFlightRecordByGroupName(string groupName)
+		{
+			//int organizerGroupId = _context.OrganizerGroup.FirstOrDefault(x => x.GroupName == groupName).OrganizerGroupId;
+			return( from fligthRecord in _context.FlightRecord // outer sequence
+							join organizerGroup in _context.OrganizerGroup //inner sequence 
+							on fligthRecord.OrganizerGroupId equals organizerGroup.OrganizerGroupId // key selector 
+							where organizerGroup.GroupName.Equals(groupName)
+							select fligthRecord
+			       );
+		}
+
+		public IEnumerable<OrganizerGroup> GetGroupsByOrganizerCode(string organizerCode)
+		{
+			return (from organizerGroup in _context.OrganizerGroup
+							where (organizerGroup.OrganizerCode == organizerCode)
+							select organizerGroup
+							);
+		}
+
+		public GroupOfSpanners GetGroupOfSpannersByGroupName(string groupName)
+		{
+			return _context.GroupOfSpanners.FirstOrDefault(r => r.GroupName == groupName);
+
+			/*
+			 return (from groupOfSpanners in _context.GroupOfSpanners
+							where (groupOfSpanners.GroupName == groupName)
+							select groupOfSpanners
+							);
+							*/
+		}
+
+		public FlightData GetFlightDataByFlightDataId(int flightDataId)
+		{
+			return _context.FlightData.FirstOrDefault(r => r.FlightDataId == flightDataId);
+		}
+		public AircraftType GetAircraftTypeByAircraftTypeId(int aircraftTypeId)
+		{
+			return _context.AircraftType.FirstOrDefault(r => r.AircraftTypeId == aircraftTypeId);
+		}
+		public Approval GetApprovalByApprovalId(int? approvalId)
+		{
+			return _context.Approval.FirstOrDefault(r => r.ApprovalId == approvalId);
+		}
+		public ApprovalDetail GetApprovalDetailByApprovalDetailId(int approvalDetailId)
+		{
+			return _context.ApprovalDetail.FirstOrDefault(r => r.ApprovalDetailId == approvalDetailId);
+		}
+		public FlightRecord GetFlightRecordByFlightRecordId(int flightRecordId)
+		{
+			return _context.FlightRecord.FirstOrDefault(r => r.FlightRecordId == flightRecordId);
+		}
+		public Qualification GetQualificationByQualificationId(int qualificationId)
+		{
+			return _context.Qualification.FirstOrDefault(r => r.QualificationId == qualificationId);
+		}
 		/*public int[] ConvertLengthToIntArray(int length)
 		{
 			int[] arrayInt = new int[length];

@@ -1,0 +1,41 @@
+﻿@model FlightSpanners.Areas.OrganizerArea.ViewModels.FlightRecordDetailViewModel
+
+@{
+	ViewBag.Title = "Flight Summary Detail";
+}
+<!-- Start of form flightrecords-organizer-detail -->
+<form method="GET" asp-area="OrganizerArea" asp-controller="FlightRecord" asp-action="Detail" class="form form-flightrecords-organizer-detail">
+	<br /><label>Group Name: </label>
+	<input type="text" asp-for="GroupName" class="input-text" readonly>
+	<br /><label>Record Date: </label>
+	<input type="text" asp-for="RecordDate" class="input-text" readonly>
+	<br /><label>Flight Date: </label>
+	<input type="text" asp-for="FlightDate" class="input-text" readonly>
+	<br /><label>Flight Time: </label>
+	<input type="text" asp-for="FlightTime" class="input-text" readonly>
+	<fieldset>
+		<legend>Flight Data: </legend>
+		<br /><input type="checkbox" asp-for="IsFlightLocal" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
+		<label class="label-endofcheckbox">Local Flight</label>
+		<input type="checkbox" asp-for="IsFlightCargo" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
+		<label class="label-endofcheckbox">Cargo Flight</label>
+		<br /><label>Flight Info: </label>
+		<input type="text" asp-for="FlightInfo" class="input-text" readonly>
+	</fieldset>
+	<br /><label>Aircraft Type: </label>
+	<input type="text" asp-for="AircraftTypeSummary" class="input-text" readonly>
+	<br /><label>Approval Detail: </label>
+	<input type="text" asp-for="ApprovalDetailSummary" class="input-text" readonly>
+	<br /><label>Flight Company: </label>
+	<input type="text" asp-for="FlightCompanyName" class="input-text" readonly>
+	<br /><label>Origin Type: </label>
+	<input type="text" asp-for="OriginTypeName" class="input-text" readonly>
+	<br /><label>Eligibility Type: </label>
+	<input type="text" asp-for="EligibilityTypeName" class="input-text" readonly>
+	<br /><label>Destination Type: </label>
+	<input type="text" asp-for="DestinationTypeName" class="input-text" readonly>
+	<br /><input type="checkbox" asp-for="IsRecordSetteled" class="input-checkbox" onclick="return false;"><!-- This requires JS enabled-->
+	<label class="label-endofcheckbox"> Setteled Record</label>
+	<br /><input type="submit" class="submit" value="Edit">
+</form>
+<!-- End of form flightrecords-organizer-detail -->

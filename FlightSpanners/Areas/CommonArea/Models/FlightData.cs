@@ -14,7 +14,7 @@ namespace FlightSpanners.Areas.CommonArea.Models
         public string AirportOrigin { get; set; }
         public string AirportDestination { get; set; }
         public TimeSpan DefaultSectorTime { get; set; }
-        public double FlightDataCostant { get; set; }
+        public double FlightDataConstant { get; set; }
         public bool IsFlightLocal { get; set; }
         public bool IsFlightCargo { get; set; }
         public int FlightBonusCard { get; set; }

@@ -19,7 +19,7 @@ namespace FlightSpanners.Areas.CommonArea.Services
 		Qualification GetQualificationOfSpanner(string codspannerCodee);
 		List<SelectListItem> GetApprovalSelectListItems(string spannerCode);
 		//List<SelectListItem> GetInActivePeriodListItems(string code);
-		IEnumerable<Spanner> GetSpannersFromGroupName(string groupName);
+		IEnumerable<Spanner> GetSpannersByGroupName(string groupName);
 		double GetFlightsAll(string spannerCode);
 		double GetFlightsShort(string spannerCode);
 		double GetFlightsLong(string spannerCode);
@@ -34,6 +34,20 @@ namespace FlightSpanners.Areas.CommonArea.Services
 		double GetSpannerBalance(string spannerCode);
 		double GetSpannerDeservedFlights(string spannerCode);
 		string GetSpannerGroup(string code);
+
+		IEnumerable<InActivePeriod> GetInActivePeriodByGroupName(string groupName);
+		IEnumerable<InActivePeriod> GetInActivePeriodBySpannerCode(string spannerCode);
+		IEnumerable<FlightRecord> GetFlightRecordByGroupName(string groupName);
+		FlightData GetFlightDataByFlightDataId(int flightDataId);
+		AircraftType GetAircraftTypeByAircraftTypeId(int aircraftTypeId);
+		Approval GetApprovalByApprovalId(int? approvalId);
+		ApprovalDetail GetApprovalDetailByApprovalDetailId(int approvalDetailId);
+		FlightRecord GetFlightRecordByFlightRecordId(int flightRecordId);
+		IEnumerable<Approval> GetApprovalBySpannerCode(string spannerCode);
+		IEnumerable<OrganizerGroup>  GetGroupsByOrganizerCode(string organizerCode);
+		GroupOfSpanners GetGroupOfSpannersByGroupName(string groupName);
+
+		Qualification GetQualificationByQualificationId(int qualificationId);
 
 		bool ValidateOrganizerCode(string code);
 		bool ValidateSpannerCode(string code);

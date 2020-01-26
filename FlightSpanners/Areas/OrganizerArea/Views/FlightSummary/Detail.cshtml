@@ -4,7 +4,7 @@
 	ViewBag.Title = "Flight Summary Detail";
 }
 <!-- Start of form flightsummary-organizer-detail -->
-<form method="POST" asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Detail" class="form form-flightsummary-organizer-detail">
+<form method="GET" asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Detail" class="form form-flightsummary-organizer-detail">
 	<br /><label>Group Name: </label>
 	<input type="text" asp-for="GroupName" class="input-text" readonly>
 	<fieldset>

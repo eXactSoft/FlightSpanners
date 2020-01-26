@@ -1,0 +1,99 @@
+﻿@model FlightSpanners.Areas.OrganizerArea.ViewModels.InActivePeriodViewModel
+
+@{
+	ViewBag.Title = "InActive Period";
+}
+<!-- Start of form inactivedays-organizer-viewall -->
+<form method="GET" asp-area="OrganizerArea" asp-controller="InActivePeriod" asp-action="Index" class="form form-inactivedays-organizer-viewall">
+	<div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th>Spanner<br />Code</th>
+					<th>Spanner<br />Name</th>
+					<th>InActive<br />Now</th>
+					<th>InActive<br />Days</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@{ 
+						List<string> codesList = new List<string>();//This list used to ensure that each spanner not repeats on the table
+						foreach (var inActive in Model.InActivePeriodList)
+						{
+							if( !codesList.Contains(inActive.SpannerCode) ) //Check spanner code is already on table or not
+							{
+								codesList.Add(inActive.SpannerCode);  
+								<tr>
+									<td>@inActive.SpannerCode</td>
+									<td>@inActive.SpannerName</td>
+									<td>@Model.IsInActiveNow(inActive.SpannerCode)</td>
+									<td>@Model.InActiveDaysTotal(inActive.SpannerCode)</td>
+									<td><a asp-area="OrganizerArea" asp-controller="InActivePeriod" asp-action="Detail" asp-route-SpannerCode="@inActive.SpannerCode">Detail</a></td>
+								</tr>
+							}
+						}
+					}
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="7">
+						<!--Use pagination only if the TotalRecords is larger than PageSize-->
+						@if (Model.TotalRecords > Model.PageSize)
+						{
+							<div class="pagination">
+								@{
+									// if the TotalRecords is multiple of PageSize then just divide TotalRecords by PageSize
+									// ,otherwise divide and add 1 page.
+									int totalNoOfPages = Model.TotalRecords % Model.PageSize == 0 ? Model.TotalRecords / Model.PageSize : Model.TotalRecords / Model.PageSize + 1;
+
+									// Dispaly 1st page navigation and previous page navigation only
+									// if the current page is not the 1st page
+									if (Model.PageNo != 1)
+									{
+										// 1st page navigation
+										<a asp-action="Index" asp-route-page=1>
+											&laquo;
+										</a>
+
+										// Previous page navigation
+										<a asp-action="Index" asp-route-page=@(Model.PageNo-1)>
+											❮
+										</a>
+									}
+
+									//Pages navigation
+									for (int i = 1; i <= totalNoOfPages; i++)
+									{
+										var active = (i == Model.PageNo) ? "active" : "";
+										<a asp-action="Index" asp-route-page="@(i)" class="@active">
+											@i
+										</a>
+									}
+
+									// Dispaly last page navigation and next page navigation only
+									// if the current page is not the last page
+									if (Model.PageNo != totalNoOfPages)
+									{
+										// Next page navigation
+										<a asp-action="Index" asp-route-page=@(Model.PageNo+1)>
+											❯
+										</a>
+
+										// Last page navigation
+										<a asp-action="Index" asp-route-page=@totalNoOfPages>
+											&raquo;
+										</a>
+									}
+
+								}
+							</div>
+						}
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+
+</form>
+<!-- End of form inactivedays-organizer-viewall -->

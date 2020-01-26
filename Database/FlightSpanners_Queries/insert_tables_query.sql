@@ -243,7 +243,7 @@ values
 ('44687', '3572', 'AirbusProduction', 'Alaa', 'Mahmoud', 'M2Name', 'Zahir', 'M', null, '1234', null, null, null, null, 1, 0, 'Production6000', 1),
 ('20071', '2239', 'AirbusProduction', 'Ali', 'AbdEl-Fatah', 'Ali', 'LastName', 'M', null, '1234', null, null, null, null, 1, 0, 'Production6000', 1),
 ('81537', '3090', 'AirbusProduction', 'Ali', 'Taha', 'Mohamed', 'LastName', 'M', null, '1234', null, null, null, null, 1, 0, 'Borescope', 1),
-('64650', '2327', 'AirbusProduction', 'Amr', 'Mostafa',	'Mohamed', 'Khalfalla', 'M', null, '1234', null, null, null, null, 1, 0, 'Production8000', 1),
+('64650', '2327', 'AirbusProduction', 'Amin', 'Mosad',	'Mohamed', 'Khaled', 'M', null, '1234', null, null, null, null, 1, 0, 'Production8000', 1),
 ('44652', '3400', 'AirbusProduction', 'Ashraf', 'Mohamed', 'Ahmed',	'Rashad', 'M', null, '1234', null, null, null, null, 1, 0, 'Str_Repair8000', 1),
 ('81471', '3071', 'AirbusProduction', 'Badry', 'Mohamed', 'M2Name', 'Badry', 'M', null, '1234', null, null, null, null, 1, 0, 'Production6000', 1),
 ('42972', '3067', 'AirbusProduction', 'Diaa', 'Mohamed', 'Ahmed', 'Al-Maiah', 'M', null,	'1234',	null, null,	null, null,	1, 0, 'Production6000', 1),
@@ -1000,7 +1000,16 @@ values
 ('20170726', '00:00', '20170726', '00:00', 1, 0, 51, 1, 91, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct'),
 ('20170601', '00:00', '20170601', '00:00', 1, 0, 55, 1, 14, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct'),
 ('20170602', '00:00', '20170602', '00:00', 1, 0, 55, 1, 14, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct'),
-('20170603', '00:00', '20170603', '00:00', 1, 0, 56, 1, 14, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct');
+('20170603', '00:00', '20170603', '00:00', 1, 0, 56, 1, 14, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct'),
+
+('20171111', '00:00', '20171116', '10:00', 0, 0, 26, 3, null, 2, 'EgyptAir', 'StayCity', 'Normal', 'Direct'),
+('20171111', '00:00', '20171217', '11:00', 0, 0, 33, 3, null, 2, 'EgyptAir', 'StayCity', 'Normal', 'Direct'),
+('20171111', '09:00', '20171219', '09:00', 0, 0, 37, 3, null, 2, 'EgyptAir', 'StayCity', 'Normal', 'Direct'),
+('20171111', '00:00', '20171120', '18:00', 0, 0, 41, 3, null, 2, 'EgyptAir', 'StayCity', 'Normal', 'Direct'),
+('20171111', '00:00', '20171205', '08:30', 0, 0, 51, 1, null, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct'),
+('20171111', '00:00', '20171206', '10:45', 0, 0, 55, 1, null, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct'),
+('20171111', '00:00', '20171216', '22:30', 0, 0, 56, 1, null, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct'),
+('20171111', '00:00', '20171220', '19:45', 0, 0, 6, 1, null, 2, 'AirCairo', 'StayCity', 'Normal', 'Direct');
 select * from FlightRecord
 
 --UPDATE FlightRecord

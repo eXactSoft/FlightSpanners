@@ -1,0 +1,36 @@
+﻿@model FlightSpanners.Areas.OrganizerArea.ViewModels.InActivePeriodDetailViewModel
+
+@{
+	ViewBag.Title = "InActive Period Detail";
+}
+<!-- Start of form flightrecords-organizer-detail -->
+<form method="GET" asp-area="OrganizerArea" asp-controller="InActivePeriod" asp-action="Detail" class="form  form-inactivedays-organizer-detail">
+	@{
+		bool spannerInfoDisplayed = true;//This list used to ensure that the spanner info does not repeat on the browser
+		foreach (var inActive in Model.InActivePeriodList)
+		{
+			if (spannerInfoDisplayed) //Check spanner code is already on table or not
+			{
+				<label>Group Name: </label>
+				<input type="text" asp-for="GroupName" class="input-text" readonly>
+				<fieldset>
+					<legend>Spanner Info:</legend>
+					<label>Code: </label>
+					<input type="text" asp-for="@inActive.SpannerCode" class="input-text" readonly>
+					<br /><label>License: </label>
+					<input type="text" asp-for="@inActive.SpannerLicenseNo" class="input-text" readonly>
+					<br /><label>Name: </label>
+					<input type="text" asp-for="@inActive.SpannerName" class="input-text" readonly>
+				</fieldset>
+				spannerInfoDisplayed = false;
+			}
+			<br /><label>Start Date: </label>
+			<input type="text" asp-for="@inActive.InActiveFromDate" class="input-text" readonly>
+			<br /><label>End Date: </label>
+			<input type="text" asp-for="@inActive.InActiveToDate" class="input-text" readonly>
+			<br /><a asp-area="OrganizerArea" asp-controller="InActivePeriod" asp-action="Edit" asp-route-InActivePeriodId="@inActive.InActivePeriodId">Edit</a><!--To be implemented later-->
+			<br />
+		}
+	}
+</form>
+<!-- End of form flightrecords-organizer-detail -->

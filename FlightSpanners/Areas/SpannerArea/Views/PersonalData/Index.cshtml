@@ -4,7 +4,7 @@
 	ViewBag.Title = "Personal Data";
 }
 <!-- Start of form Spanner Data Detail -->
-<form method="POST" asp-area="SpannerArea" asp-controller="PersonalData" asp-action="Index" class="form form-organizerdata-detail">
+<form method="GET" asp-area="SpannerArea" asp-controller="PersonalData" asp-action="Index" class="form form-organizerdata-detail">
 	<br /><label>Approvals: </label>
 	<!-- Readonly listbox selection-->
 	<select multiple="multiple" asp-for="ApprovalListValues" asp-items="@Model.ApprovalList">

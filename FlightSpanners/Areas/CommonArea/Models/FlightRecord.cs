@@ -5,7 +5,7 @@ namespace FlightSpanners.Areas.CommonArea.Models
 {
     public partial class FlightRecord
     {
-        public int FlightRecoedId { get; set; }
+        public int FlightRecordId { get; set; }
         public DateTime RecordDate { get; set; }
         public TimeSpan RecordTime { get; set; }
         public DateTime FlightDate { get; set; }
@@ -14,7 +14,7 @@ namespace FlightSpanners.Areas.CommonArea.Models
         public bool IsRecordAutoSelected { get; set; }
         public int FlightDataId { get; set; }
         public int AircraftTypeId { get; set; }
-        public int ApprovalId { get; set; }
+        public int? ApprovalId { get; set; }
         public int OrganizerGroupId { get; set; }
         public string FlightCompanyName { get; set; }
         public string OriginTypeName { get; set; }

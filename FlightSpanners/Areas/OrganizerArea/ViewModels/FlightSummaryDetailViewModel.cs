@@ -30,7 +30,7 @@ namespace FlightSpanners.Areas.OrganizerArea.ViewModels
 			_httpContext = httpContext;
 		}
 
-		public void SetFlightSummaryDetailViewModel(string spannerCode)
+		public void SetFlightSummaryDetailViewModelProperties(string spannerCode)
 		{
 			GroupName = _httpContext.HttpContext.User.FindFirst(ClaimTypes.GroupSid).Value;
 			//string spannerCode = _httpContext.HttpContext.Request.Query["SpannerCode"];

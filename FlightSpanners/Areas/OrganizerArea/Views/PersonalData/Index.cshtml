@@ -3,8 +3,8 @@
 @{
 	ViewBag.Title = "Personal Data";
 }
-<!-- Start of form Organizer Data Detail -->
-<form method="POST" asp-area="OrganizerArea" asp-controller="PersonalData" asp-action="Index" class="form form-organizerdata-detail">
+<!-- Start of form organizerdata-detail -->
+<form method="GET" asp-area="OrganizerArea" asp-controller="PersonalData" asp-action="Index" class="form form-organizerdata-detail">
 	<br /><label>Organizer Groups: </label>
 	<!-- Readonly listbox selection-->
 	<select multiple="multiple" asp-for="OrganizerGroupListValues" asp-items="@Model.OrganizerGroupList">
@@ -12,7 +12,7 @@
 		<!-- This requires JS enabled -->
 	</select>
 	<br /><label>Organizer Code: </label>
-	<input type="text" asp-for="OrganizerCode"class="input-text" readonly>
+	<input type="text" asp-for="OrganizerCode" class="input-text" readonly>
 	<br /><label>First Name: </label>
 	<input type="text" asp-for="OrganizerFName" class="input-text" readonly>
 	<br /><label>Middle Name1: </label>
@@ -30,4 +30,4 @@
 	<br /><label>Occupation: </label>
 	<input type="text" asp-for="OrganizerOccupation" class="input-text" readonly>
 </form>
-<!-- End of form  Organizer Data Detail -->
+<!-- End of form organizerdata-detail -->

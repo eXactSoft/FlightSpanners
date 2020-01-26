@@ -12,9 +12,9 @@ namespace FlightSpanners.Areas.CommonArea.Models
         }
 
         public int AircraftTypeId { get; set; }
-        public string AircrfatModel { get; set; }
+        public string AircraftModel { get; set; }
         public string EngineModel { get; set; }
-        public double AircraftTypeCostant { get; set; }
+        public double AircraftTypeConstant { get; set; }
 
         public ICollection<Approval> Approval { get; set; }
         public ICollection<FlightRecord> FlightRecord { get; set; }

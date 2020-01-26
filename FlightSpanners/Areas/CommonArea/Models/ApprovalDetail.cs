@@ -13,7 +13,7 @@ namespace FlightSpanners.Areas.CommonArea.Models
         public int ApprovalDetailId { get; set; }
         public string ApprovalRating { get; set; }
         public string ApprovalCategory { get; set; }
-        public double ApprovalCostant { get; set; }
+        public double ApprovalConstant { get; set; }
 
         public ICollection<Approval> Approval { get; set; }
     }

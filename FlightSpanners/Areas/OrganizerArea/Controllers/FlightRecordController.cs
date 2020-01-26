@@ -13,19 +13,18 @@ namespace FlightSpanners.Areas.OrganizerArea.Controllers
 {
 	[Area("OrganizerArea")] //Let the framework know which area this controller belongs to
 	[Authorize(Roles = "Organizer")]
-	public class FlightSummaryController : Controller
+	public class FlightRecordController : Controller
 	{
 		private IFlightSpannersData _flightSpannersData;
-		private FlightSummaryViewModel _flightsSummaryViewModel;
-		private FlightSummaryDetailViewModel _flightsSummaryDetailViewModel;
+		private FlightRecordViewModel _flightRecordViewModel;
+		private FlightRecordDetailViewModel _flightRecordDetailViewModel;
 
 		//Constructor injection
-		public FlightSummaryController(IFlightSpannersData flightSpannersData, FlightSummaryViewModel flightsSummaryViewModel, FlightSummaryDetailViewModel flightsSummaryDetailViewModel)
+		public FlightRecordController(IFlightSpannersData flightSpannersData, FlightRecordViewModel flightRecordViewModel, FlightRecordDetailViewModel flightRecordDetailViewModel)
 		{
 			_flightSpannersData = flightSpannersData;
-			_flightsSummaryViewModel = flightsSummaryViewModel;
-			_flightsSummaryDetailViewModel = flightsSummaryDetailViewModel;
-			//HttpContext.Request.Query["page"].ToString(); This will raise a null ref exception as the HttpContext object is not constructed yet
+			_flightRecordViewModel = flightRecordViewModel;
+			_flightRecordDetailViewModel = flightRecordDetailViewModel;
 		}
 
 		public IActionResult Index(int? page)
@@ -40,21 +39,21 @@ namespace FlightSpanners.Areas.OrganizerArea.Controllers
 			{
 				//page ?? 1 {null coalescing operator} ==> return the valur of page if it has a value
 				//,or return 1 if page is null
-				_flightsSummaryViewModel.SetFlightSummaryViewModelProperties(page ?? 1);
-				return View(nameof(FlightSummaryController.Index), _flightsSummaryViewModel);
+				_flightRecordViewModel.SetFlightRecordViewModelProperties(page ?? 1);
+				return View(nameof(FlightRecordController.Index), _flightRecordViewModel);
 			}
 		}
 
-		public IActionResult Detail(string spannerCode)
+		public IActionResult Detail(int? flightRecordId)
 		{
-			if ( String.IsNullOrEmpty(spannerCode) )
+			if (!flightRecordId.HasValue)
 			{
 				return RedirectToAction(nameof(HomeController.Index));
 			}
 			else
 			{
-				_flightsSummaryDetailViewModel.SetFlightSummaryDetailViewModelProperties(spannerCode);
-				return View(nameof(FlightSummaryController.Detail), _flightsSummaryDetailViewModel);
+				_flightRecordDetailViewModel.SetFlightRecordDetailViewModelProperties(flightRecordId.Value);
+				return View(nameof(FlightRecordController.Detail), _flightRecordDetailViewModel);
 			}
 		}
 

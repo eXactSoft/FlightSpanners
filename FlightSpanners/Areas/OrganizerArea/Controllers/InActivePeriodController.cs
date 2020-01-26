@@ -13,19 +13,18 @@ namespace FlightSpanners.Areas.OrganizerArea.Controllers
 {
 	[Area("OrganizerArea")] //Let the framework know which area this controller belongs to
 	[Authorize(Roles = "Organizer")]
-	public class FlightSummaryController : Controller
+	public class InActivePeriodController : Controller
 	{
 		private IFlightSpannersData _flightSpannersData;
-		private FlightSummaryViewModel _flightsSummaryViewModel;
-		private FlightSummaryDetailViewModel _flightsSummaryDetailViewModel;
+		private InActivePeriodViewModel _inActivePeriodViewModel;
+		private InActivePeriodDetailViewModel _inActivePeriodDetailViewModel;
 
 		//Constructor injection
-		public FlightSummaryController(IFlightSpannersData flightSpannersData, FlightSummaryViewModel flightsSummaryViewModel, FlightSummaryDetailViewModel flightsSummaryDetailViewModel)
+		public InActivePeriodController(IFlightSpannersData flightSpannersData, InActivePeriodViewModel inActivePeriodViewModel, InActivePeriodDetailViewModel inActivePeriodDetailViewModel)
 		{
 			_flightSpannersData = flightSpannersData;
-			_flightsSummaryViewModel = flightsSummaryViewModel;
-			_flightsSummaryDetailViewModel = flightsSummaryDetailViewModel;
-			//HttpContext.Request.Query["page"].ToString(); This will raise a null ref exception as the HttpContext object is not constructed yet
+			_inActivePeriodViewModel = inActivePeriodViewModel;
+			_inActivePeriodDetailViewModel = inActivePeriodDetailViewModel;
 		}
 
 		public IActionResult Index(int? page)
@@ -40,21 +39,21 @@ namespace FlightSpanners.Areas.OrganizerArea.Controllers
 			{
 				//page ?? 1 {null coalescing operator} ==> return the valur of page if it has a value
 				//,or return 1 if page is null
-				_flightsSummaryViewModel.SetFlightSummaryViewModelProperties(page ?? 1);
-				return View(nameof(FlightSummaryController.Index), _flightsSummaryViewModel);
+				_inActivePeriodViewModel.SetInActivePeriodViewModelProperties(page ?? 1);
+				return View(nameof(InActivePeriodController.Index), _inActivePeriodViewModel);
 			}
 		}
 
 		public IActionResult Detail(string spannerCode)
 		{
-			if ( String.IsNullOrEmpty(spannerCode) )
+			if (String.IsNullOrEmpty(spannerCode))
 			{
 				return RedirectToAction(nameof(HomeController.Index));
 			}
 			else
 			{
-				_flightsSummaryDetailViewModel.SetFlightSummaryDetailViewModelProperties(spannerCode);
-				return View(nameof(FlightSummaryController.Detail), _flightsSummaryDetailViewModel);
+				_inActivePeriodDetailViewModel.SetInActivePeriodDetailViewModelProperties(spannerCode);
+				return View(nameof(InActivePeriodController.Detail), _inActivePeriodDetailViewModel);
 			}
 		}
 

@@ -51,7 +51,7 @@ namespace FlightSpanners.Areas.CommonArea.Data
         {
             modelBuilder.Entity<AircraftType>(entity =>
             {
-                entity.Property(e => e.AircrfatModel)
+                entity.Property(e => e.AircraftModel)
                     .IsRequired()
                     .HasMaxLength(20);
 
@@ -197,7 +197,7 @@ namespace FlightSpanners.Areas.CommonArea.Data
 
             modelBuilder.Entity<FlightRecord>(entity =>
             {
-                entity.HasKey(e => e.FlightRecoedId);
+                entity.HasKey(e => e.FlightRecordId);
 
                 entity.Property(e => e.DestinationTypeName)
                     .IsRequired()

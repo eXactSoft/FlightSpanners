@@ -55,6 +55,12 @@ namespace FlightSpanners
 			//Transient: services are created each time they're requested. 
 			//					 This lifetime works best for lightweight, stateless services.
 
+			//Register FlightRecordDetailViewModel object in services
+			services.AddTransient<FlightRecordDetailViewModel>();
+
+			//Register FlightRecordViewModel object in services
+			services.AddTransient<FlightRecordViewModel>();
+
 			//Register FlightSummaryDetailViewModel object in services
 			services.AddTransient<FlightSummaryDetailViewModel>();
 
@@ -66,6 +72,27 @@ namespace FlightSpanners
 
 			//Register SpannerDataViewModel object in services
 			services.AddTransient<SpannerDataViewModel>();
+
+			//Register InActivePeriodViewModel object in services
+			services.AddTransient<InActivePeriodViewModel>();
+
+			//Register InActivePeriodViewModel object in services
+			services.AddTransient<InActivePeriodDetailViewModel>();
+
+			//Register SpannersDataViewModel object in services
+			services.AddTransient<SpannersDataViewModel>();
+
+			//Register SpannersDataDetailViewModel object in services
+			services.AddTransient<SpannersDataDetailViewModel>();
+
+			//Register ApprovalsDataViewModel object in services
+			services.AddTransient<ApprovalsDataViewModel>();
+
+			//Register ApprovalsDataDetailViewModel object in services
+			services.AddTransient<ApprovalsDataDetailViewModel>();
+
+			//Register GroupsDataViewModel object in services
+			services.AddTransient<GroupsDataViewModel>();
 
 			//Use cookie authentication without ASP.NET Core Identity
 			services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

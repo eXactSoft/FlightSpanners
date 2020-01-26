@@ -392,6 +392,14 @@ main .main-container .form-forgot-unregistered label{
 	width: 145px
 }
 /* End label Exceptions */
+/* Start InActiveDays Detail form Edit link to be a button*/
+main .main-container .form-inactivedays-organizer-detail a {
+		color: green;
+}
+	main .main-container .form-inactivedays-organizer-detail a:hover {
+		text-decoration: none
+}
+/* End InActiveDays Detail form Edit link to be a button*/
 /* End form controls styles */
 /* Start form table pagination links styles*/
 main .main-container .form .pagination{

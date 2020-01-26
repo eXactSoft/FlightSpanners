@@ -4,7 +4,7 @@
 	ViewBag.Title = "Flight Summary";
 }
 <!-- Start Start of form flightsummary-organizer-viewall -->
-<form method="POST" asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Index" class="form form-flightsummary-organizer-viewall">
+<form method="GET" asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Index" class="form form-flightsummary-organizer-viewall">
 	<div class="table-container">
 		<table>
 			<thead>
@@ -26,24 +26,117 @@
 						<td>@summary.AllFlights</td>
 						<td><a asp-area="OrganizerArea" asp-controller="FlightSummary" asp-action="Detail" asp-route-SpannerCode="@summary.SpannerCode">Detail</a></td><!--To be implemented later-->
 					</tr>
-					<!-- input type="hidden" asp-for="" /> -->
 				}
 			</tbody>
 			<tfoot>
 				<tr>
 					<td colspan="5">
-						<div class="pagination">
-							<a href="#">&laquo;</a>
-							<a href="#">❮</a>
-							<a href="#">1</a>
-							<a class="active" href="#">2</a>
-							<a href="#">3</a>
-							<a href="#">4</a>
-							<a href="#">5</a>
-							<a href="#">6</a>
-							<a href="#">❯</a>
-							<a href="#">&raquo;</a>
-						</div>
+						<!--Use pagination only if the TotalRecords is larger than PageSize-->
+						@if (Model.TotalRecords > Model.PageSize)
+						{
+							<div class="pagination">
+								@{
+									// if the TotalRecords is multiple of PageSize then just divide TotalRecords by PageSize
+									// ,otherwise divide and add 1 page.
+									int totalNoOfPages = Model.TotalRecords % Model.PageSize == 0 ? Model.TotalRecords/Model.PageSize : Model.TotalRecords/Model.PageSize + 1;
+
+									// Dispaly 1st page navigation and previous page navigation only 
+									// if the current page is not the 1st page
+									if (Model.PageNo != 1)
+									{
+										// 1st page navigation
+										<a asp-action="Index" asp-route-page=1>
+											&laquo;
+										</a>
+
+										// Previous page navigation
+										<a asp-action="Index" asp-route-page=@(Model.PageNo-1)>
+											❮
+										</a>
+									}
+
+									//Pages navigation
+									for (int i = 1; i <= totalNoOfPages; i++)
+									{
+										var active = (i == Model.PageNo) ? "active" : "";
+										<a asp-action="Index" asp-route-page="@(i)" class="@active">
+											@i
+										</a>
+									}
+
+									// Dispaly last page navigation and next page navigation only 
+									// if the current page is not the last page
+									if (Model.PageNo != totalNoOfPages)
+									{
+										// Next page navigation
+										<a asp-action="Index" asp-route-page=@(Model.PageNo+1)>
+											❯
+										</a>
+
+										// Last page navigation
+										<a asp-action="Index" asp-route-page=@totalNoOfPages>
+											&raquo;
+										</a>
+									}
+
+								}
+							</div>
+						}
+						<!--
+	<a href="#">&laquo;</a>
+	<a href="#">❮</a>
+	<a href="#">1</a>
+	<a class="active" href="#">2</a>
+	<a href="#">3</a>
+	<a href="#">4</a>
+	<a href="#">5</a>
+	<a href="#">6</a>
+	<a href="#">❯</a>
+	<a href="#">&raquo;</a>
+
+	<paging total-records="Model.TotalRecords" page-no="Model.PageNo">
+	</paging>
+
+	<paging total-records="Model.TotalRecords"
+	page-no="Model.PageNo"
+	page-size="Model.PageSize"
+	show-prev-next="true"
+	show-total-pages="true"
+	show-total-records="true"
+	show-page-size-nav="true"
+	show-first-numbered-page="true"
+	show-last-numbered-page="true"
+	gap-size="2"
+	max-displayed-pages="3"
+	query-string-key-page-no="p"
+	query-string-key-page-size="s"
+	query-string-value="@@(Request.QueryString.Value)"
+	page-size-nav-block-size="10"
+	page-size-nav-max-items="3"
+	page-size-nav-on-change="get"
+	page-size-nav-form-method="this.form.submit();"
+	class="row"
+	class-paging-control-div="col"
+	class-info-div="col"
+	class-page-size-div="col"
+	class-paging-control="pagination"
+	class-active-page="disabled"
+	class-disabled-jumping-button="disabled"
+	class-total-pages="badge badge-secondary"
+	class-total-records="badge badge-info"
+	text-page-size="Items per page:"
+	text-total-pages="pages"
+	text-total-records="records"
+	text-first="&laquo;"
+	text-last="&raquo;"
+	text-previous="&lsaquo;"
+	text-next="&rsaquo;"
+	sr-text-first="First"
+	sr-text-last="Last"
+	sr-text-previous="Previous"
+	sr-text-next="Next">
+	</paging>
+	-->
 					</td>
 				</tr>
 			</tfoot>

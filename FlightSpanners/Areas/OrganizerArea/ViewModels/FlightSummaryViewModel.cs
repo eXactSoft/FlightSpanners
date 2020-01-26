@@ -20,44 +20,38 @@ namespace FlightSpanners.Areas.OrganizerArea.ViewModels
 		private IFlightSpannersData _flightSpannersData;
 		private IHttpContextAccessor _httpContext;
 
-		//public FlightSummaryViewModel() //: this(httpContext: _httpContext, flightSpannersData: _flightSpannersData)
-		//{ }
-
 		//Constructor injection
 		public FlightSummaryViewModel(IHttpContextAccessor httpContext, IFlightSpannersData flightSpannersData)
 		{
 			_flightSpannersData = flightSpannersData;
 			_httpContext = httpContext;
+		}
 
+		//Initialize FlightSummaryViewModel Properties
+		public void SetFlightSummaryViewModelProperties(int pageNo)
+		{
 			var currentGroup = _httpContext.HttpContext.User.FindFirst(ClaimTypes.GroupSid).Value;
 
-			//Return the SummaryList for the current organizer according to the current group name
-			SummaryList = GetSummaryList(currentGroup); //"AirbusProduction");//
+			//The number of flight summary PageSize in one page
+			PageSize = 10;//****This will be taken from a configuration file
+
+			PageNo = pageNo;
+
+			var summaryList = GetSummaryList(currentGroup);
+			TotalRecords = summaryList.Count();
+
+			//Return the SummaryList for the current organizer according to the current group name ordered by spanners name
+			//and for pagination to operate skip the ((PageNo - 1) * PageSize) rows starting from 1st row
+			//and take from the remaining rows the first PageSize rows only
+			SummaryList = summaryList.OrderBy(x => x.SpannerName).Skip((PageNo - 1) * PageSize).Take(PageSize).ToList();  
+			 //.OrderBy(x => x.DeservedFlights)
 		}
 
-		/*public void InitializeSummaryViewModel(HttpContext httpContext, IFlightSpannersData flightSpannersData)
-		{
-			_flightSpannersData = flightSpannersData;
+		public int TotalRecords { get; set; }
+		
+		public int PageNo { get; set; }
 
-			string organizerCode = httpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
-			//Return the organizer based on the code
-			var organizer = flightSpannersData.GetOrganizerByCode(organizerCode);
-
-			//Get the OrganizerGroupList item of the model using GetOrganizerGroupNames(code) method
-			this.OrganizerGroupsList = flightSpannersData.GetOrganizerGroupSelectListItems(organizerCode);
-
-			//Get the OrganizerGroupListValues array from the length of OrganizerGroupList
-			//this.OrganizerGroupListValues = flightSpannersData.ConvertLengthToIntArray(this.OrganizerGroupList.Count);
-
-			OrganizerGroupId = 0;
-
-			//Return the SummaryList for the current organizer according to the first group name
-			//To be re-implemented to be according to selected group name not first group name
-			SummaryList = GetSummaryList(OrganizerGroupsList[OrganizerGroupId].Text); //"AirbusProduction");//
-																																						//SummaryList = GetSummaryList(OrganizerGroups[0].Text);
-		}
-		*/
+		public int PageSize { get; set; }
 
 		public List<Summary> SummaryList { get; set; }
 
@@ -83,7 +77,7 @@ namespace FlightSpanners.Areas.OrganizerArea.ViewModels
 		private List<Summary> GetSummaryList(string groupName)
 		{
 			SummaryList = new List<Summary>();
-			var spannerQuery = _flightSpannersData.GetSpannersFromGroupName(groupName);
+			var spannerQuery = _flightSpannersData.GetSpannersByGroupName(groupName);
 			foreach (var spanner in spannerQuery)
 			{
 				SummaryList.Add(new Summary {
@@ -106,6 +100,7 @@ namespace FlightSpanners.Areas.OrganizerArea.ViewModels
 			}
 			return SummaryList;
 		}
+
 	}
 
 }

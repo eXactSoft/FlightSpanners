@@ -1,0 +1,32 @@
+﻿@model FlightSpanners.Areas.OrganizerArea.ViewModels.ApprovalsDataDetailViewModel
+
+@{
+	ViewBag.Title = "Approval Detail";
+}
+<!-- Start Start of form approvals-organizer-detail -->
+<form method="GET" asp-area="OrganizerArea" asp-controller="ApprovalsData" asp-action="Index" class="form form-approvals-organizer-detail">
+	<br /><label>Group Name: </label>
+	<input type="text" asp-for="GroupName" class="input-text" readonly>
+	<fieldset>
+		<legend>Spanner Info:</legend>
+		<br /><label>Code: </label>
+		<input type="text" asp-for="SpannerCode" class="input-text" readonly>
+		<br /><label>License: </label>
+		<input type="text" asp-for="SpannerLicenseNo" class="input-text" readonly>
+		<br /><label>Name: </label>
+		<input type="text" asp-for="SpannerName" class="input-text" readonly>
+	</fieldset>
+	<br /><label>Approval Rating: </label>
+	<input type="text" asp-for="ApprovalRating" class="input-text" readonly>
+	<br /><label>Approval Category: </label>
+	<input type="text" asp-for="ApprovalCategory" class="input-text" readonly>
+	<fieldset>
+		<legend>Aircraft Type:</legend>
+		<br /><label>A/C Model: </label>
+		<input type="text" asp-for="AircraftModel" class="input-text" readonly>
+		<br /><label>Eng. Model: </label>
+		<input type="text" asp-for="EngineModel" class="input-text" readonly>
+	</fieldset>
+	<br /><input type="submit" class="submit" value="Edit">
+</form>
+<!-- End Start of form approvals-organizer-detail -->
